@@ -17,8 +17,14 @@ export default {
         tertiaryGradient: "#81ECFF",
         accent: "#A733FF", // 
         accentGradient: "#D297FF",
+        menu:"#C1C2D3",
         backgroundDark: "#000319",
-        light: '#E4ECFF',
+        backgroundMenu: "#04071D",
+        light: "#E4ECFF",
+        linearBgAMenu: "#04071D",
+        linearBgBMenu: "#0C0E23",
+        // linearStrokeAMenu: "#6971A2",
+        linearStrokeBMenu: "#272A3C",
         // warning: "#F24E1E", // 
         // warningGradient: "#FF7262",
       },
