@@ -10,12 +10,19 @@ export default async function Home() {
 
   return (
     <HydrateClient>
-      <main className="flex min-h-screen flex-col items-center justify-center bg-backgroundDark text-white">
-        <div className="container max-w-[938px] flex flex-col items-center justify-center gap-12 py-16">
+      <main className="flex min-h-screen flex-col items-center justify-center bg-navy-950 text-white">
+        <div className="container flex max-w-[938px] flex-col items-center justify-center gap-12 py-16">
           <h1 className="text-7xl font-bold tracking-tight sm:text-[5rem]">
-          Sites web, applications & stratégie digitale : une <span className="text-[hsl(280,100%,70%)]">présence en ligne qui vous ressemble</span> 
+            Sites web, applications & stratégie digitale : une{" "}
+            <span className="text-purple-300">
+              présence en ligne qui vous ressemble
+            </span>
           </h1>
-          <p className="text-2xl">Je conçois des sites web et des applications sur mesure, accompagnés d’une stratégie digitale efficace pour renforcer votre présence en ligne.</p>
+          <p className="text-2xl">
+            Je conçois des sites web et des applications sur mesure, accompagnés
+            d’une stratégie digitale efficace pour renforcer votre présence en
+            ligne.
+          </p>
           {/* <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
             <Link
               className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 hover:bg-white/20"

@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+  .link-underline-circle::after {
+    content: '';
+    display: flex;
+    position: relative;
+    width: 7px;
+    height: 7px;
+    top:28px;
+    margin: auto;
+    border-radius: 100%;
+    background-color: white;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
+  
+  .link-underline-circle.active::after,
+  .link-underline-circle:hover::after {
+    opacity: 1;
+  }
+  

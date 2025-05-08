@@ -2,15 +2,15 @@ import "~/styles/globals.css";
 
 import Header from "./_components/header";
 
-import { Inter } from 'next/font/google'
+import { Inter } from "next/font/google";
 import { type Metadata } from "next";
 
 import { TRPCReactProvider } from "~/trpc/react";
 
 const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-})
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Site web Marine Magnin",
@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className={inter.className}>
       <body>
-        <Header/>
+        <Header />
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>
