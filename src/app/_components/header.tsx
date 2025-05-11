@@ -25,6 +25,7 @@ import {
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 import Logo from "./logo";
+import SocialIconLink from "./socialIconLink";
 
 const services = [
   {
@@ -56,7 +57,7 @@ export default function Header() {
     <header className="bg-navy-950">
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between p-12 lg:px-[100px]"
       >
         <div className="flex lg:flex-1">
           <a
@@ -165,6 +166,20 @@ export default function Header() {
             Contact
           </Link>
         </PopoverGroup>
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <a
+            href="https://github.com/Magma73"
+            className="flex items-center -m-1.5 size-12 rounded-xl border border-indigo-400-16 bg-gradient-to-br from-blue-950 to-blue-900 p-1.5"
+          >
+            <span className="sr-only">Github</span>
+            <SocialIconLink
+              src="/iconGithub.svg"
+              width={18}
+              height={18}
+              alt="Logo github"
+            />
+          </a>
+        </div>
       </nav>
       <Dialog
         open={mobileMenuOpen}
