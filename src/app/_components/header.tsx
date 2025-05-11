@@ -24,6 +24,8 @@ import {
 } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
+import Logo from "./logo";
+
 const services = [
   {
     name: "Sites web et app",
@@ -57,12 +59,16 @@ export default function Header() {
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <img
-              alt=""
-              src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-              className="h-8 w-auto"
+          <a
+            href="/"
+            className="-m-1.5 rounded-xl border border-indigo-400-16 bg-gradient-to-br from-blue-950 to-blue-900 p-1.5"
+          >
+            <span className="sr-only">M&M</span>
+            <Logo
+              src="/logo.png"
+              width={73}
+              height={66}
+              alt="Logo Marine Magnin"
             />
           </a>
         </div>
@@ -169,11 +175,12 @@ export default function Header() {
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-navy-950 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="/" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <img
-                alt=""
-                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-                className="h-8 w-auto"
+              <span className="sr-only">M&M</span>
+              <Logo
+                src="/logo.png"
+                width={73}
+                height={66}
+                alt="Logo Marine Magnin"
               />
             </a>
             <button
@@ -188,39 +195,6 @@ export default function Header() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                {/* <Disclosure as="div" className="-mx-3">
-                  {({ open }) => (
-                    <div>
-                      <DisclosureButton
-                        className={`group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base/7 font-medium ${pathname === "/services" ? "bg-white text-navy-950" : "text-slate-200 hover:bg-white hover:text-navy-950"}`}
-                      >
-                        <Link
-                          className={`link ${pathname === "/services" ? "active" : ""}`}
-                          href="/services"
-                        >
-                          Services
-                        </Link>
-                        <ChevronDownIcon
-                          aria-hidden="true"
-                          className={`size-5 flex-none transition-transform duration-200 ${open ? "rotate-180" : ""}`}
-                        />
-                      </DisclosureButton>
-                      <DisclosurePanel className="mt-2 space-y-2">
-                        {[...services].map((item) => (
-                          <DisclosureButton
-                            key={item.name}
-                            as="a"
-                            href={item.href}
-                            className={`block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-medium ${pathname === item.href ? "bg-white text-navy-950" : "text-slate-200 hover:bg-white hover:text-navy-950"}`}
-                          >
-                            {item.name}
-                          </DisclosureButton>
-                        ))}
-                      </DisclosurePanel>
-                    </div>
-                  )}
-                </Disclosure> */}
-
                 <Disclosure
                   as="div"
                   className="-mx-3"
