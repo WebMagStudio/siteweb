@@ -166,10 +166,10 @@ export default function Header() {
             Contact
           </Link>
         </PopoverGroup>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="gap-2 hidden lg:flex lg:flex-1 lg:justify-end">
           <a
             href="https://github.com/Magma73"
-            className="flex items-center -m-1.5 size-12 rounded-xl border border-indigo-400-16 bg-gradient-to-br from-blue-950 to-blue-900 p-1.5"
+            className="flex items-center justify-center -m-1.5 mx-4 size-12 rounded-xl border border-indigo-400-16 bg-gradient-to-br from-blue-950 to-blue-900 p-1.5"
           >
             <span className="sr-only">Github</span>
             <SocialIconLink
@@ -177,6 +177,19 @@ export default function Header() {
               width={18}
               height={18}
               alt="Logo github"
+            />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/marine-magnin/"
+            className="flex items-center justify-center -m-1.5 size-12 rounded-xl border border-indigo-400-16 bg-gradient-to-br from-blue-950 to-blue-900 p-1.5"
+          >
+            <span className="sr-only">Linkedin</span>
+            <SocialIconLink
+              src="/iconLinkedin.svg"
+              width={18}
+              height={18}
+              alt="Logo linkedin"
             />
           </a>
         </div>
