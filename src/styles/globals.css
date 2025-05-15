@@ -11,13 +11,18 @@
     top:28px;
     margin: auto;
     border-radius: 100%;
-    background-color: white;
-    transition: opacity 0.3s ease;
+    background-color: theme('colors.white');
+    transition: opacity 0.3s ease, box-shadow 0.3s ease;
     opacity: 0;
   }
   
   .link-underline-circle.active::after,
   .link-underline-circle:hover::after {
     opacity: 1;
+    box-shadow: 0 0 8px 2px theme('colors.navy-950');
   }
   
+  .dark .link-underline-circle::after {
+    background-color: white;
+    box-shadow: none;
+  }

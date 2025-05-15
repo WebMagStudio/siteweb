@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 import { useState } from "react";
+import { useEffect } from "react";
 import {
   Dialog,
   DialogPanel,
@@ -50,19 +51,66 @@ const services = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isDark, setIsDark] = useState(false);
   const pathname = usePathname();
   const isServicesRoute = pathname.startsWith("/services/");
 
+  // useEffect(() => {
+  //   const theme = localStorage.getItem("theme");
+  //   if (theme === "dark") {
+  //     document.documentElement.classList.add("dark");
+  //   }
+  // }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const theme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+
+      if (theme === "dark" || (!theme && prefersDark)) {
+        document.documentElement.classList.add("dark");
+        setIsDark(true);
+      } else {
+        document.documentElement.classList.remove("dark");
+        setIsDark(false);
+      }
+    }
+  }, []);
+
+  // const toggleTheme = () => {
+  //   if (document.documentElement.classList.contains("dark")) {
+  //     document.documentElement.classList.remove("dark");
+  //     localStorage.setItem("theme", "light");
+  //   } else {
+  //     document.documentElement.classList.add("dark");
+  //     localStorage.setItem("theme", "dark");
+  //   }
+  // };
+
+  const toggleTheme = () => {
+    if (document.documentElement.classList.contains("dark")) {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setIsDark(false);
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      setIsDark(true);
+    }
+  };
+
   return (
-    <header className="bg-navy-950">
+    <header className="bg-bg-light dark:bg-slate-950">
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-7xl items-center justify-between p-12 lg:px-[100px]"
+        className="max-[1440px] mx-auto flex items-center justify-between p-12 lg:px-[48px] xl:px-[100px]"
       >
         <div className="flex lg:flex-1">
           <a
             href="/"
-            className="-m-1.5 rounded-xl border border-indigo-400-16 bg-gradient-to-br from-blue-950 to-blue-900 p-1.5"
+            className="-m-1.5 p-1.5 rounded-xl bg-bg-light-menu from-bg-gradient-dark-start to-bg-gradient-dark-end dark:border dark:border-indigo-400-16 dark:bg-gradient-to-br"
           >
             <span className="sr-only">M&M</span>
             <Logo
@@ -77,26 +125,26 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-slate-200"
+            className="text-light -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 dark:text-slate-200"
           >
             <span className="sr-only">Ouvrir le menu</span>
             <Bars3Icon aria-hidden="true" className="size-6 hover:text-white" />
           </button>
         </div>
-        <PopoverGroup className="hidden rounded-2xl border border-indigo-400-16 bg-gradient-to-br from-blue-950 to-blue-900 px-12 py-6 lg:flex lg:gap-x-12">
+        <PopoverGroup className="hidden rounded-2xl border border-indigo-400-16 bg-bg-light-menu from-bg-gradient-dark-start to-bg-gradient-dark-end px-12 py-6 lg:flex lg:gap-x-8 xl:gap-x-12 dark:bg-gradient-to-br">
           <Popover className="relative">
             {({ open }) => (
               <>
-                <PopoverButton className="flex items-center gap-x-1 text-base/6 font-medium text-slate-200 hover:text-white">
+                <PopoverButton className="text-light flex items-center gap-x-1 text-base/6 font-medium hover:text-white dark:text-slate-200">
                   <Link
-                    className={`link ${pathname === "/services" ? "active text-white" : ""} link-underline-circle text-base font-medium text-slate-200 hover:text-white`}
+                    className={`link ${pathname === "/services" ? "active text-white" : ""} link-underline-circle text-light text-base font-medium text-bg-light dark:text-slate-200 hover:text-white`}
                     href="/services"
                   >
                     Services
                   </Link>
                   <ChevronDownIcon
                     aria-hidden="true"
-                    className={`mb-[7px] size-5 flex-none text-gray-400 transition-transform duration-200 hover:text-white ${
+                    className={`mb-[7px] size-5 flex-none text-bg-light dark:text-slate-200 transition-transform duration-200 hover:text-white ${
                       open ? "rotate-180" : ""
                     }`}
                   />
@@ -104,7 +152,7 @@ export default function Header() {
 
                 <PopoverPanel
                   transition
-                  className="data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-gradient-to-br from-blue-950 to-blue-900 shadow-lg ring-1 ring-gray-900/5 transition"
+                  className="data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-gradient-to-br from-bg-gradient-dark-start to-bg-gradient-dark-end shadow-lg ring-1 ring-gray-900/5 transition"
                 >
                   <div className="p-4">
                     {services.map((item) => (
@@ -139,37 +187,37 @@ export default function Header() {
           </Popover>
 
           <Link
-            className={`link ${pathname === "/realisations" ? "active text-white" : ""} link-underline-circle text-base font-medium text-slate-200 hover:text-white`}
+            className={`link ${pathname === "/realisations" ? "active text-white" : ""} link-underline-circle text-base font-medium text-bg-light dark:text-slate-200 hover:text-white`}
             href="/realisations"
           >
             Réalisations
           </Link>
 
           <Link
-            className={`link ${pathname === "/apropos" ? "active text-white" : ""} link-underline-circle text-base font-medium text-slate-200 hover:text-white`}
+            className={`link ${pathname === "/apropos" ? "active text-white" : ""} link-underline-circle text-base font-medium text-bg-light dark:text-slate-200 hover:text-white`}
             href="/apropos"
           >
             À propos
           </Link>
 
           <Link
-            className={`link ${pathname === "/blog" ? "active text-white" : ""} link-underline-circle text-base font-medium text-slate-200 hover:text-white`}
+            className={`link ${pathname === "/blog" ? "active text-white" : ""} link-underline-circle text-base font-medium text-bg-light dark:text-slate-200 hover:text-white`}
             href="/blog"
           >
             Blog
           </Link>
 
           <Link
-            className={`link ${pathname === "/contact" ? "active text-white" : ""} link-underline-circle text-base font-medium text-slate-200 hover:text-white`}
+            className={`link ${pathname === "/contact" ? "active text-white" : ""} link-underline-circle text-base font-medium text-bg-light dark:text-slate-200 hover:text-white`}
             href="/contact"
           >
             Contact
           </Link>
         </PopoverGroup>
-        <div className="gap-2 hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden items-center gap-2 lg:flex lg:flex-1 lg:justify-end">
           <a
             href="https://github.com/Magma73"
-            className="flex items-center justify-center -m-1.5 mx-4 size-12 rounded-xl border border-indigo-400-16 bg-gradient-to-br from-blue-950 to-blue-900 p-1.5"
+            className="from-bg-white to-bg-white ml-6 mr-4  p-1.5 flex size-12 items-center justify-center rounded-xl border border-indigo-400-16 bg-bg-light-menu from-bg-gradient-dark-start to-bg-gradient-dark-end hover:shadow-xl hover:dark:shadow-none dark:bg-gradient-to-br dark:hover:bg-gradient-to-br hover:dark:border-none"
           >
             <span className="sr-only">Github</span>
             <SocialIconLink
@@ -177,12 +225,13 @@ export default function Header() {
               width={18}
               height={18}
               alt="Logo github"
+              className="fill-blue-500"
             />
           </a>
 
           <a
             href="https://www.linkedin.com/in/marine-magnin/"
-            className="flex items-center justify-center -m-1.5 size-12 rounded-xl border border-indigo-400-16 bg-gradient-to-br from-blue-950 to-blue-900 p-1.5"
+            className="flex size-12 p-1.5 items-center justify-center rounded-xl border border-indigo-400-16 bg-bg-light-menu from-bg-gradient-dark-start to-bg-gradient-dark-end hover:shadow-xl hover:dark:shadow-none dark:bg-gradient-to-br hover:dark:border-none"
           >
             <span className="sr-only">Linkedin</span>
             <SocialIconLink
@@ -192,6 +241,18 @@ export default function Header() {
               alt="Logo linkedin"
             />
           </a>
+
+          <button
+            onClick={toggleTheme}
+            className="ml-4 flex size-12 items-center justify-center transition-transform duration-300 hover:rotate-180"
+          >
+            <SocialIconLink
+              src={isDark ? "/sun.svg" : "/moon.svg"}
+              width={24}
+              height={24}
+              alt={isDark ? "Thème clair" : "Thème sombre"}
+            />
+          </button>
         </div>
       </nav>
       <Dialog
@@ -200,7 +261,7 @@ export default function Header() {
         className="lg:hidden"
       >
         <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-navy-950 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-bg-light px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:bg-navy-950">
           <div className="flex items-center justify-between">
             <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">M&M</span>
@@ -293,6 +354,50 @@ export default function Header() {
                 >
                   Contact
                 </Link>
+
+                <div className="flex flex-col items-start gap-2">
+                  <div className="flex justify-around">
+                    <a
+                      href="https://github.com/Magma73"
+                      className="mr-2 flex size-12 items-center justify-center rounded-xl border border-indigo-400-16 bg-gradient-to-br from-bg-gradient-dark-start to-bg-gradient-dark-end p-1.5"
+                    >
+                      <span className="sr-only">Github</span>
+                      <SocialIconLink
+                        src="/iconGithub.svg"
+                        width={18}
+                        height={18}
+                        alt="Logo github"
+                      />
+                    </a>
+
+                    <a
+                      href="https://www.linkedin.com/in/marine-magnin/"
+                      className="flex size-12 items-center justify-center rounded-xl border border-indigo-400-16 bg-gradient-to-br from-bg-gradient-dark-start to-bg-gradient-dark-end p-1.5"
+                    >
+                      <span className="sr-only">Linkedin</span>
+                      <SocialIconLink
+                        src="/iconLinkedin.svg"
+                        width={18}
+                        height={18}
+                        alt="Logo linkedin"
+                      />
+                    </a>
+                  </div>
+
+                  <div>
+                    <button
+                      onClick={toggleTheme}
+                      className="flex size-12 items-center justify-center"
+                    >
+                      <SocialIconLink
+                        src={isDark ? "/sun.svg" : "/moon.svg"}
+                        width={24}
+                        height={24}
+                        alt={isDark ? "Thème clair" : "Thème sombre"}
+                      />
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

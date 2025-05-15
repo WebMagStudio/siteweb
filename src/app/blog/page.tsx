@@ -1,6 +1,6 @@
 export default async function Blog() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-navy-950 text-white">
+    <main className="flex min-h-screen flex-col items-center justify-center text-navy-950 dark:text-white">
       <div className="container flex max-w-[938px] flex-col items-center justify-center gap-12 py-16">
         <h1 className="text-7xl font-bold tracking-tight text-purple-300 sm:text-[5rem]">
           Blog

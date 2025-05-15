@@ -3,6 +3,7 @@ import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
   content: ["./src/**/*.tsx"],
+  darkMode: "selector",
   theme: {
     extend: {
       fontFamily: {
@@ -27,15 +28,21 @@ export default {
         "violet-500": "#A733FF",
         "violet-300": "#D297FF",
         "navy-950": "#000319",
+        "bg-light": "#E4ECFF",
         "indigo-100": "#E4ECFF",
         "slate-200": "#C1C2D3",
-        "blue-950": "#04071D",
-        "blue-900": "#0C0E23",
+        "bg-gradient-dark-start": "#04071D",
+        "bg-gradient-dark-end": "#0C0E23",
         "indigo-400-16": "rgba(105, 113, 162, 0.16)",
-        "slate-700-37": "rgba(39, 42, 60, 0.37)",
+        "slate-700-37": "rgba(39, 42, 60, 0.7)",
+        "bg-light-menu": "#240651",
+        "text-light": "#e5e8ff",
         // warning: "#F24E1E", //
         // warningGradient: "#FF7262",
       },
+      // screens: {
+      //   "md+": "1040px", // breakpoint personnalisé
+      // },
     },
   },
   plugins: [],
