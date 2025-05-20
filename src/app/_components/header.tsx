@@ -55,13 +55,6 @@ export default function Header() {
   const pathname = usePathname();
   const isServicesRoute = pathname.startsWith("/services/");
 
-  // useEffect(() => {
-  //   const theme = localStorage.getItem("theme");
-  //   if (theme === "dark") {
-  //     document.documentElement.classList.add("dark");
-  //   }
-  // }, []);
-
   useEffect(() => {
     if (typeof window !== "undefined") {
       const theme = localStorage.getItem("theme");
@@ -78,16 +71,6 @@ export default function Header() {
       }
     }
   }, []);
-
-  // const toggleTheme = () => {
-  //   if (document.documentElement.classList.contains("dark")) {
-  //     document.documentElement.classList.remove("dark");
-  //     localStorage.setItem("theme", "light");
-  //   } else {
-  //     document.documentElement.classList.add("dark");
-  //     localStorage.setItem("theme", "dark");
-  //   }
-  // };
 
   const toggleTheme = () => {
     if (document.documentElement.classList.contains("dark")) {
@@ -110,7 +93,7 @@ export default function Header() {
         <div className="flex lg:flex-1">
           <a
             href="/"
-            className="-m-1.5 p-1.5 rounded-xl bg-bg-light-menu from-bg-gradient-dark-start to-bg-gradient-dark-end dark:border dark:border-indigo-400-16 dark:bg-gradient-to-br"
+            className="-m-1.5 rounded-xl bg-bg-light-menu from-bg-gradient-dark-start to-bg-gradient-dark-end p-1.5 dark:border dark:border-indigo-400-16 dark:bg-gradient-to-br"
           >
             <span className="sr-only">M&M</span>
             <Logo
@@ -128,7 +111,10 @@ export default function Header() {
             className="text-light -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 dark:text-slate-200"
           >
             <span className="sr-only">Ouvrir le menu</span>
-            <Bars3Icon aria-hidden="true" className="size-6 hover:text-white" />
+            <Bars3Icon
+              aria-hidden="true"
+              className="size-6 text-slate-200 hover:text-bg-light-menu dark:text-slate-200 dark:hover:text-white"
+            />
           </button>
         </div>
         <PopoverGroup className="hidden rounded-2xl border border-indigo-400-16 bg-bg-light-menu from-bg-gradient-dark-start to-bg-gradient-dark-end px-12 py-6 lg:flex lg:gap-x-8 xl:gap-x-12 dark:bg-gradient-to-br">
@@ -137,14 +123,14 @@ export default function Header() {
               <>
                 <PopoverButton className="text-light flex items-center gap-x-1 text-base/6 font-medium hover:text-white dark:text-slate-200">
                   <Link
-                    className={`link ${pathname === "/services" ? "active text-white" : ""} link-underline-circle text-light text-base font-medium text-bg-light dark:text-slate-200 hover:text-white`}
+                    className={`link ${pathname === "/services" ? "active text-white" : ""} link-underline-circle text-light text-base font-medium text-bg-light hover:text-white dark:text-slate-200`}
                     href="/services"
                   >
                     Services
                   </Link>
                   <ChevronDownIcon
                     aria-hidden="true"
-                    className={`mb-[7px] size-5 flex-none text-bg-light dark:text-slate-200 transition-transform duration-200 hover:text-white ${
+                    className={`mb-[7px] size-5 flex-none text-bg-light transition-transform duration-200 hover:text-white dark:text-slate-200 ${
                       open ? "rotate-180" : ""
                     }`}
                   />
@@ -187,28 +173,28 @@ export default function Header() {
           </Popover>
 
           <Link
-            className={`link ${pathname === "/realisations" ? "active text-white" : ""} link-underline-circle text-base font-medium text-bg-light dark:text-slate-200 hover:text-white`}
+            className={`link ${pathname === "/realisations" ? "active text-white" : ""} link-underline-circle text-base font-medium text-bg-light hover:text-white dark:text-slate-200`}
             href="/realisations"
           >
             Réalisations
           </Link>
 
           <Link
-            className={`link ${pathname === "/apropos" ? "active text-white" : ""} link-underline-circle text-base font-medium text-bg-light dark:text-slate-200 hover:text-white`}
+            className={`link ${pathname === "/apropos" ? "active text-white" : ""} link-underline-circle text-base font-medium text-bg-light hover:text-white dark:text-slate-200`}
             href="/apropos"
           >
             À propos
           </Link>
 
           <Link
-            className={`link ${pathname === "/blog" ? "active text-white" : ""} link-underline-circle text-base font-medium text-bg-light dark:text-slate-200 hover:text-white`}
+            className={`link ${pathname === "/blog" ? "active text-white" : ""} link-underline-circle text-base font-medium text-bg-light hover:text-white dark:text-slate-200`}
             href="/blog"
           >
             Blog
           </Link>
 
           <Link
-            className={`link ${pathname === "/contact" ? "active text-white" : ""} link-underline-circle text-base font-medium text-bg-light dark:text-slate-200 hover:text-white`}
+            className={`link ${pathname === "/contact" ? "active text-white" : ""} link-underline-circle text-base font-medium text-bg-light hover:text-white dark:text-slate-200`}
             href="/contact"
           >
             Contact
@@ -217,7 +203,7 @@ export default function Header() {
         <div className="hidden items-center gap-2 lg:flex lg:flex-1 lg:justify-end">
           <a
             href="https://github.com/Magma73"
-            className="from-bg-white to-bg-white ml-6 mr-4  p-1.5 flex size-12 items-center justify-center rounded-xl border border-indigo-400-16 bg-bg-light-menu from-bg-gradient-dark-start to-bg-gradient-dark-end hover:shadow-xl hover:dark:shadow-none dark:bg-gradient-to-br dark:hover:bg-gradient-to-br hover:dark:border-none"
+            className="from-bg-white to-bg-white ml-6 mr-4 flex size-12 items-center justify-center rounded-xl border border-indigo-400-16 bg-bg-light-menu from-bg-gradient-dark-start to-bg-gradient-dark-end p-1.5 hover:shadow-xl dark:bg-gradient-to-br hover:dark:border-none dark:hover:bg-gradient-to-br hover:dark:shadow-none"
           >
             <span className="sr-only">Github</span>
             <SocialIconLink
@@ -231,7 +217,7 @@ export default function Header() {
 
           <a
             href="https://www.linkedin.com/in/marine-magnin/"
-            className="flex size-12 p-1.5 items-center justify-center rounded-xl border border-indigo-400-16 bg-bg-light-menu from-bg-gradient-dark-start to-bg-gradient-dark-end hover:shadow-xl hover:dark:shadow-none dark:bg-gradient-to-br hover:dark:border-none"
+            className="flex size-12 items-center justify-center rounded-xl border border-indigo-400-16 bg-bg-light-menu from-bg-gradient-dark-start to-bg-gradient-dark-end p-1.5 hover:shadow-xl dark:bg-gradient-to-br hover:dark:border-none hover:dark:shadow-none"
           >
             <span className="sr-only">Linkedin</span>
             <SocialIconLink
@@ -263,7 +249,10 @@ export default function Header() {
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-bg-light px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:bg-navy-950">
           <div className="flex items-center justify-between">
-            <a href="/" className="-m-1.5 p-1.5">
+            <a
+              href="/"
+              className="-m-1.5 rounded-xl bg-bg-light-menu from-bg-gradient-dark-start to-bg-gradient-dark-end p-1.5 dark:border dark:border-indigo-400-16 dark:bg-gradient-to-br"
+            >
               <span className="sr-only">M&M</span>
               <Logo
                 src="/logo.png"
@@ -275,7 +264,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
-              className="-m-2.5 rounded-md p-2.5 text-slate-200"
+              className="-m-2.5 rounded-md p-2.5 text-slate-200 hover:text-bg-light-menu dark:hover:text-white"
             >
               <span className="sr-only">Fermer le menu</span>
               <XMarkIcon aria-hidden="true" className="size-6" />
@@ -292,20 +281,13 @@ export default function Header() {
                   {({ open }) => (
                     <div>
                       <DisclosureButton
-                        className="group block flex items-center gap-2 rounded-lg px-3 py-2 text-base text-base/7 font-medium text-slate-200 hover:bg-white hover:text-navy-950"
-                        // onClick={(e) => {
-                        //   // Empêche la navigation si le menu est fermé (on veut juste l'ouvrir)
-                        //   if (!open) {
-                        //     e.preventDefault();
-                        //   }
-                        //   // Sinon, laisser la navigation se faire (si tu veux ça)
-                        // }}
+                        className={`link ${pathname === "/services" ? "active bg-bg-light-menu text-white dark:bg-white dark:text-navy-950" : "text-navy-950 dark:text-slate-200"} group block flex items-center gap-2 rounded-lg px-3 py-2 text-base text-base/7 font-medium text-navy-950 hover:bg-bg-light-menu hover:text-white dark:hover:bg-white dark:hover:text-navy-950`}
                         as={Link}
                         href="/services"
                       >
                         Services
                         <ChevronDownIcon
-                          className={`size-5 flex-none text-slate-200 transition-transform duration-200 hover:text-navy-950 ${
+                          className={`size-5 flex-none text-navy-950 transition-transform duration-200 hover:text-white dark:text-slate-200 dark:hover:text-navy-950 ${
                             open ? "rotate-180" : ""
                           }`}
                         />
@@ -317,7 +299,7 @@ export default function Header() {
                             key={item.name}
                             as="a"
                             href={item.href}
-                            className={`block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-medium ${pathname === item.href ? "bg-white text-navy-950" : "text-slate-200 hover:bg-white hover:text-navy-950"}`}
+                            className={`block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-medium ${pathname === item.href ? "bg-bg-light-menu text-white dark:bg-white dark:text-navy-950" : "text-navy-950 hover:bg-bg-light-menu hover:text-white dark:text-slate-200 dark:hover:bg-white dark:hover:text-navy-950"}`}
                           >
                             {item.name}
                           </DisclosureButton>
@@ -328,28 +310,28 @@ export default function Header() {
                 </Disclosure>
 
                 <Link
-                  className={`link ${pathname === "/realisations" ? "active bg-white text-navy-950" : "text-slate-200"} -mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium hover:bg-white hover:text-navy-950`}
+                  className={`link ${pathname === "/realisations" ? "active bg-bg-light-menu text-white dark:bg-white dark:text-navy-950" : "text-navy-950 dark:text-slate-200"} -mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium hover:bg-bg-light-menu hover:text-white dark:hover:bg-white dark:hover:text-navy-950`}
                   href="/realisations"
                 >
                   Réalisations
                 </Link>
 
                 <Link
-                  className={`link ${pathname === "/apropos" ? "active bg-white text-navy-950" : "text-slate-200"} -mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium hover:bg-white hover:text-navy-950`}
+                  className={`link ${pathname === "/apropos" ? "active bg-bg-light-menu text-white dark:bg-white dark:text-navy-950" : "text-navy-950 dark:text-slate-200"} -mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium hover:bg-bg-light-menu hover:text-white dark:hover:bg-white dark:hover:text-navy-950`}
                   href="/apropos"
                 >
                   À propos
                 </Link>
 
                 <Link
-                  className={`link ${pathname === "/blog" ? "active bg-white text-navy-950" : "text-slate-200"} -mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium hover:bg-white hover:text-navy-950`}
+                  className={`link ${pathname === "/blog" ? "active bg-bg-light-menu text-white dark:bg-white dark:text-navy-950" : "text-navy-950 dark:text-slate-200"} -mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium hover:bg-bg-light-menu hover:text-white dark:hover:bg-white dark:hover:text-navy-950`}
                   href="/blog"
                 >
                   Blog
                 </Link>
 
                 <Link
-                  className={`link ${pathname === "/contact" ? "active bg-white text-navy-950" : "text-slate-200"} -mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium hover:bg-white hover:text-navy-950`}
+                  className={`link ${pathname === "/contact" ? "active bg-bg-light-menu text-white dark:bg-white dark:text-navy-950" : "text-navy-950 dark:text-slate-200"} -mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium hover:bg-bg-light-menu hover:text-white dark:hover:bg-white dark:hover:text-navy-950`}
                   href="/contact"
                 >
                   Contact
@@ -359,7 +341,7 @@ export default function Header() {
                   <div className="flex justify-around">
                     <a
                       href="https://github.com/Magma73"
-                      className="mr-2 flex size-12 items-center justify-center rounded-xl border border-indigo-400-16 bg-gradient-to-br from-bg-gradient-dark-start to-bg-gradient-dark-end p-1.5"
+                      className="mr-2 flex size-12 items-center justify-center rounded-xl border border-indigo-400-16 bg-bg-light-menu from-bg-gradient-dark-start to-bg-gradient-dark-end p-1.5 hover:shadow-xl dark:bg-gradient-to-br hover:dark:border-none hover:dark:shadow-none"
                     >
                       <span className="sr-only">Github</span>
                       <SocialIconLink
@@ -372,7 +354,7 @@ export default function Header() {
 
                     <a
                       href="https://www.linkedin.com/in/marine-magnin/"
-                      className="flex size-12 items-center justify-center rounded-xl border border-indigo-400-16 bg-gradient-to-br from-bg-gradient-dark-start to-bg-gradient-dark-end p-1.5"
+                      className="flex size-12 items-center justify-center rounded-xl border border-indigo-400-16 bg-bg-light-menu from-bg-gradient-dark-start to-bg-gradient-dark-end p-1.5 hover:shadow-xl dark:bg-gradient-to-br hover:dark:border-none hover:dark:shadow-none"
                     >
                       <span className="sr-only">Linkedin</span>
                       <SocialIconLink
@@ -387,7 +369,7 @@ export default function Header() {
                   <div>
                     <button
                       onClick={toggleTheme}
-                      className="flex size-12 items-center justify-center"
+                      className="flex size-12 items-center justify-center transition-transform duration-300 hover:rotate-180"
                     >
                       <SocialIconLink
                         src={isDark ? "/sun.svg" : "/moon.svg"}
