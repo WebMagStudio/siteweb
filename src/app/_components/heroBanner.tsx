@@ -2,8 +2,8 @@ import CTAButton from "./ctaButton";
 import { ReactNode } from "react";
 
 type HeroBannerProps = {
-  title: ReactNode;
-  text: ReactNode;
+  title: string | React.ReactNode;
+  text: string | React.ReactNode;
   button?: {
     text: string | ReactNode;
     href: string;
