@@ -88,12 +88,12 @@ export default function Header() {
     <header className="bg-bg-light dark:bg-slate-950">
       <nav
         aria-label="Global"
-        className="max-[1440px] mx-auto flex items-center justify-between p-12 lg:px-[48px] xl:px-[100px]"
+        className="max-[1440px] mx-auto flex items-center justify-between px-6 py-12 lg:px-[48px] xl:px-[100px]"
       >
         <div className="flex lg:flex-1">
           <a
             href="/"
-            className="-m-1.5 rounded-xl bg-bg-light-menu from-bg-gradient-dark-start to-bg-gradient-dark-end p-1.5 dark:border dark:border-indigo-400-16 dark:bg-gradient-to-br"
+            className="rounded-xl bg-bg-light-menu from-bg-gradient-dark-start to-bg-gradient-dark-end p-1.5 sm:-m-1.5 dark:border dark:border-indigo-400-16 dark:bg-gradient-to-br"
           >
             <span className="sr-only">M&M</span>
             <Logo
