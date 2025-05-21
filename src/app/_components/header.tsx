@@ -207,7 +207,7 @@ export default function Header() {
           >
             <span className="sr-only">Github</span>
             <SocialIconLink
-              src="/iconGithub.svg"
+              src="/icons/iconGithub.svg"
               width={18}
               height={18}
               alt="Logo github"
@@ -221,7 +221,7 @@ export default function Header() {
           >
             <span className="sr-only">Linkedin</span>
             <SocialIconLink
-              src="/iconLinkedin.svg"
+              src="/icons/iconLinkedin.svg"
               width={18}
               height={18}
               alt="Logo linkedin"
@@ -233,7 +233,7 @@ export default function Header() {
             className="ml-4 flex size-12 items-center justify-center transition-transform duration-300 hover:rotate-180"
           >
             <SocialIconLink
-              src={isDark ? "/sun.svg" : "/moon.svg"}
+              src={isDark ? "/icons/sun.svg" : "/icons/moon.svg"}
               width={24}
               height={24}
               alt={isDark ? "Thème clair" : "Thème sombre"}
@@ -345,7 +345,7 @@ export default function Header() {
                     >
                       <span className="sr-only">Github</span>
                       <SocialIconLink
-                        src="/iconGithub.svg"
+                        src="/icons/iconGithub.svg"
                         width={18}
                         height={18}
                         alt="Logo github"
@@ -358,7 +358,7 @@ export default function Header() {
                     >
                       <span className="sr-only">Linkedin</span>
                       <SocialIconLink
-                        src="/iconLinkedin.svg"
+                        src="/icons/iconLinkedin.svg"
                         width={18}
                         height={18}
                         alt="Logo linkedin"
@@ -372,7 +372,7 @@ export default function Header() {
                       className="flex size-12 items-center justify-center transition-transform duration-300 hover:rotate-180"
                     >
                       <SocialIconLink
-                        src={isDark ? "/sun.svg" : "/moon.svg"}
+                        src={isDark ? "/icons/sun.svg" : "/icons/moon.svg"}
                         width={24}
                         height={24}
                         alt={isDark ? "Thème clair" : "Thème sombre"}

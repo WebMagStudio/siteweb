@@ -4,6 +4,7 @@ import Link from "next/link";
 import { api, HydrateClient } from "~/trpc/server";
 // import CTAButton from "./_components/ctaButton";
 import HeroBanner from "./_components/heroBanner";
+import HeadingBlock from "./_components/headingBlock";
 
 export default async function Home() {
   const hello = await api.post.hello({ text: "from tRPC" });
@@ -27,6 +28,19 @@ export default async function Home() {
             ligne."
           button={{ text: "Lancez votre projet", href: "/contact" }}
         />
+        <section className="my-12">
+          <HeadingBlock
+            preTitle="Des services sur mesure"
+            title={
+              <>
+                Trouvez le{" "}
+                <span className="text-purple-300">
+                  service qui vous correspond
+                </span>
+              </>
+            }
+          />
+        </section>
         {/* <CTAButton href="/contact" text="Lancez votre projet" /> */}
         {/* <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
             <Link
