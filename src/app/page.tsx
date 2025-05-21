@@ -2,6 +2,8 @@ import Link from "next/link";
 
 // import { LatestPost } from "~/app/_components/post";
 import { api, HydrateClient } from "~/trpc/server";
+// import CTAButton from "./_components/ctaButton";
+import HeroBanner from "./_components/heroBanner";
 
 export default async function Home() {
   const hello = await api.post.hello({ text: "from tRPC" });
@@ -11,19 +13,22 @@ export default async function Home() {
   return (
     <HydrateClient>
       <main className="flex min-h-screen flex-col items-center justify-center text-white">
-        <div className="container flex max-w-[938px] flex-col items-center justify-center gap-12 py-16">
-          <h1 className="text-7xl font-bold tracking-tight sm:text-[5rem]">
-            Sites web, applications & stratégie digitale : une{" "}
-            <span className="text-purple-300">
-              présence en ligne qui vous ressemble
-            </span>
-          </h1>
-          <p className="text-2xl">
-            Je conçois des sites web et des applications sur mesure, accompagnés
+        <HeroBanner
+          title={
+            <>
+              Sites web, applications & stratégie digitale :{" "}
+              <span className="text-purple-300">
+                une présence en ligne qui vous ressemble
+              </span>
+            </>
+          }
+          text="Je conçois des sites web et des applications sur mesure, accompagnés
             d’une stratégie digitale efficace pour renforcer votre présence en
-            ligne.
-          </p>
-          {/* <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
+            ligne."
+          button={{ text: "Lancez votre projet", href: "/contact" }}
+        />
+        {/* <CTAButton href="/contact" text="Lancez votre projet" /> */}
+        {/* <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
             <Link
               className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 hover:bg-white/20"
               href="https://create.t3.gg/en/usage/first-steps"
@@ -53,8 +58,8 @@ export default async function Home() {
             </p>
           </div> */}
 
-          {/* <LatestPost /> */}
-        </div>
+        {/* <LatestPost /> */}
+        {/* </div> */}
       </main>
     </HydrateClient>
   );

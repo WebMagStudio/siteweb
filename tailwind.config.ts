@@ -22,6 +22,8 @@ export default {
         // light: '#E4ECFF',
         "purple-300": "#CBACF9",
         "purple-600": "#7E5DB0",
+        fushia: "#FF00C1",
+        amber: "#F4AC24",
         white: "#FFFFFF",
         "cyan-400": "#00D0F5",
         "cyan-200": "#81ECFF",
