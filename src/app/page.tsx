@@ -6,6 +6,7 @@ import { api, HydrateClient } from "~/trpc/server";
 import HeroBanner from "./_components/heroBanner";
 import HeadingBlock from "./_components/headingBlock";
 import ServiceCard from "./_components/serviceCard";
+import { servicesList } from "../data/servicesList";
 
 export default async function Home() {
   const hello = await api.post.hello({ text: "from tRPC" });
@@ -41,61 +42,10 @@ export default async function Home() {
               </>
             }
           />
-          {/* <div className="flex flex-col flex-wrap justify-between gap-6 px-4 lg:flex-row lg:gap-6 xl:gap-12"> */}
           <div className="grid grid-cols-1 gap-6 px-4 lg:grid-cols-3 lg:gap-8 xl:gap-10">
-            {/* <div className="flex flex-col justify-between gap-6 px-4 md:flex-row lg:gap-6 xl:gap-12"> */}
-
-            <ServiceCard
-              title="Sites vitrines, sites e-commerce, applications et landing pages"
-              description={
-                <>
-                  Vous avez un projet web en tête ? <br /> Que ce soit pour
-                  créer ou refondre votre{" "}
-                  <strong> site vitrine, e-commerce ou landing page</strong>, je
-                  suis là pour transformer vos idées en réalité. <br /> Je
-                  développe également des{" "}
-                  <strong>applications web et mobiles</strong> sur mesure,
-                  adaptées à vos besoins.
-                </>
-              }
-              cta="Explorez nos solutions"
-              link="/services/sites-web-et-app"
-              icon="/icons/code-bracket-square.svg"
-            />
-
-            <ServiceCard
-              title="Stratégie digitale et création de contenus"
-              description={
-                <>
-                  Boostez votre <strong> présence en ligne </strong> avec une
-                  stratégie digitale personnalisée. <br /> Je vous accompagne
-                  dans la gestion de votre communication sur les{" "}
-                  <strong>réseaux sociaux</strong>, la{" "}
-                  <strong>rédaction de contenus</strong> optimisés SEO et
-                  l'amélioration de votre visibilité sur{" "}
-                  <strong>Google My Business</strong> pour attirer de nouveaux
-                  clients.
-                </>
-              }
-              cta="Explorez nos solutions"
-              link="/services/sites-web-et-app"
-              icon="/icons/code-bracket-square.svg"
-            />
-
-            <ServiceCard
-              title="Maintenance et sécurité"
-              description={
-                <>
-                  Un site ou une application, ça nécessite une attention
-                  régulière. <br /> Pour vous, je m’occupe des mises à jour, des
-                  sauvegardes et de la sécurité pour garantir leur bon
-                  fonctionnement et leur protection.
-                </>
-              }
-              cta="Explorez nos solutions"
-              link="/services/sites-web-et-app"
-              icon="/icons/code-bracket-square.svg"
-            />
+            {servicesList.map((service) => (
+              <ServiceCard key={service.id} {...service} />
+            ))}
           </div>
         </section>
         {/* <CTAButton href="/contact" text="Lancez votre projet" /> */}

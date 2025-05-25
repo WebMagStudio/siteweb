@@ -1,4 +1,15 @@
-const services = [
+import { ReactNode } from "react";
+
+type Service = {
+  id: number;
+  title: string;
+  description: ReactNode;
+  cta: string;
+  link: string;
+  icon: string;
+};
+
+export const servicesList: Service[] = [
   {
     id: 1,
     title: "Sites vitrines, sites e-commerce, applications et landing pages",
