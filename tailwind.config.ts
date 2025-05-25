@@ -39,6 +39,7 @@ export default {
         "slate-700-37": "rgba(39, 42, 60, 0.7)",
         "bg-light-menu": "#240651",
         "text-light": "#e5e8ff",
+        "stroke-article": "rgba(54, 55, 73, 0.43)",
         // warning: "#F24E1E", //
         // warningGradient: "#FF7262",
       },
