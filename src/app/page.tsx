@@ -48,6 +48,18 @@ export default async function Home() {
             ))}
           </div>
         </section>
+
+        <section className="my-12">
+          <HeadingBlock
+            preTitle="Réalisations"
+            title={
+              <>
+                Focus sur{" "}
+                <span className="text-purple-300">nos réalisations</span>
+              </>
+            }
+          />
+        </section>
         {/* <CTAButton href="/contact" text="Lancez votre projet" /> */}
         {/* <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
             <Link
