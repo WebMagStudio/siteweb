@@ -40,6 +40,8 @@ export default {
         "bg-light-menu": "#240651",
         "text-light": "#e5e8ff",
         "stroke-article": "rgba(54, 55, 73, 0.43)",
+        mistyLavender: "#BEC1DD",
+        midnight: "#13162D",
         // warning: "#F24E1E", //
         // warningGradient: "#FF7262",
       },
