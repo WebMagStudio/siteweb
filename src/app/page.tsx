@@ -7,6 +7,7 @@ import HeroBanner from "./_components/heroBanner";
 import HeadingBlock from "./_components/headingBlock";
 import ServiceCard from "./_components/serviceCard";
 import { servicesList } from "../data/servicesList";
+import ProjectCard from "./_components/projectCard";
 
 export default async function Home() {
   const hello = await api.post.hello({ text: "from tRPC" });
@@ -49,7 +50,7 @@ export default async function Home() {
           </div>
         </section>
 
-        <section className="my-12">
+        <section className="my-12 w-full">
           <HeadingBlock
             preTitle="Réalisations"
             title={
@@ -59,6 +60,48 @@ export default async function Home() {
               </>
             }
           />
+          <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-6 px-4 lg:grid-cols-2 lg:gap-8 xl:gap-10">
+            <ProjectCard
+              title="Argent bank"
+              description="Utiliser le state manager Redux pour gérer l'état de l'application"
+              category="App web"
+              image="/img/argent-bank.png"
+              liveDemo="https://www.behance.net/gallery/196270895/Lets-Sport"
+              sourceCode="https://github.com/Magma73/Projet-2-Transformez-une-maquette-en-site-web-avec-HTML-CSS-Booki"
+              technologies={[
+                { name: "Adobe XD", logo: "/iconsTech/adobexd.png" },
+                { name: "Invision", logo: "/iconsTech/invision.png" },
+                { name: "Flow Mapp", logo: "/iconsTech/flowmapp.png" },
+              ]}
+            />
+            <ProjectCard
+              title="Let's sport"
+              description="Concevoir une app mobile pour favoriser le sport entre amis"
+              category="Design graphique"
+              image="/img/lets-sport.png"
+              liveDemo="null"
+              sourceCode="https://www.behance.net/gallery/196270895/Lets-Sport"
+              technologies={[
+                { name: "Adobe XD", logo: "/iconsTech/adobexd.png" },
+                { name: "Invision", logo: "/iconsTech/invision.png" },
+                { name: "Flow Mapp", logo: "/iconsTech/flowmapp.png" },
+              ]}
+            />
+            <ProjectCard
+              title="GameOn"
+              description="Créer une landing page avec Javascript"
+              category="Site web"
+              image="/img/gameon.png"
+              liveDemo="https://magma73.github.io/Projet-4-Creer-une-landing-page-avec-Javascript/"
+              sourceCode="https://github.com/Magma73/Projet-4-Creer-une-landing-page-avec-Javascript"
+              technologies={[
+                { name: "HTML", logo: "/iconsTech/react.png" },
+                { name: "CSS", logo: "/iconsTech/css.png" },
+                { name: "Bootstrap", logo: "/iconsTech/bootstrap.png" },
+                { name: "SASS", logo: "/iconsTech/sass.png" },
+              ]}
+            />
+          </div>
         </section>
         {/* <CTAButton href="/contact" text="Lancez votre projet" /> */}
         {/* <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">

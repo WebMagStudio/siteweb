@@ -11,19 +11,18 @@ type Project = {
   technologies: { name: string; logo: string }[];
 };
 
-export const projectsList : Project[] = [
+export const projectsList: Project[] = [
   {
     id: 1,
     title: "Let's sport",
-    description:
-      "Concevoir une app mobile permettant aux particuliers de faire du sport avec leurs amis ou des personnes membres du service",
+    description: "Concevoir une app mobile pour favoriser le sport entre amis",
     category: "Design graphique",
     image: "/img/lets-sport.png",
     liveDemo: null,
     sourceCode: "https://www.behance.net/gallery/196270895/Lets-Sport",
     technologies: [
-        { name: "Adobe XD", logo: "/iconsTech/adobexd.png" },
-        { name: "Invision", logo: "/iconsTech/invision.png" },
+      { name: "Adobe XD", logo: "/iconsTech/adobexd.png" },
+      { name: "Invision", logo: "/iconsTech/invision.png" },
       { name: "Flow Mapp", logo: "/iconsTech/flowmapp.png" },
     ],
   },
@@ -56,7 +55,7 @@ export const projectsList : Project[] = [
     technologies: [
       { name: "HTML", logo: "/iconsTech/react.png" },
       { name: "CSS", logo: "/iconsTech/css.png" },
-        { name: "Javascript", logo: "/iconsTech/javascript.png" },
+      { name: "Javascript", logo: "/iconsTech/javascript.png" },
     ],
   },
   {
@@ -72,7 +71,7 @@ export const projectsList : Project[] = [
     technologies: [
       { name: "HTML", logo: "/iconsTech/react.png" },
       { name: "CSS", logo: "/iconsTech/css.png" },
-        { name: "SASS", logo: "/iconsTech/sass.png" },
+      { name: "SASS", logo: "/iconsTech/sass.png" },
       //   { name: "Flexbox", logo: "/iconsTech/flexbox.png" },
     ],
   },
@@ -89,7 +88,7 @@ export const projectsList : Project[] = [
     technologies: [
       { name: "HTML", logo: "/iconsTech/react.png" },
       { name: "CSS", logo: "/iconsTech/css.png" },
-        { name: "SASS", logo: "/iconsTech/sass.png" },
+      { name: "SASS", logo: "/iconsTech/sass.png" },
       //   { name: "Flexbox", logo: "/iconsTech/flexbox.png" },
     ],
   },
@@ -106,9 +105,9 @@ export const projectsList : Project[] = [
     technologies: [
       { name: "HTML", logo: "/iconsTech/react.png" },
       { name: "CSS", logo: "/iconsTech/css.png" },
-        { name: "Bootstrap", logo: "/iconsTech/bootstrap.png" },
-        { name: "SASS", logo: "/iconsTech/sass.png" },
-        // { name: "Flexbox", logo: "/iconsTech/flexbox.png" },
+      { name: "Bootstrap", logo: "/iconsTech/bootstrap.png" },
+      { name: "SASS", logo: "/iconsTech/sass.png" },
+      // { name: "Flexbox", logo: "/iconsTech/flexbox.png" },
     ],
   },
   {
@@ -121,9 +120,9 @@ export const projectsList : Project[] = [
     sourceCode:
       "https://github.com/Magma73/Projet-9-Debuggez-et-testez-un-SaaS-RH/tree/main",
     technologies: [
-        { name: "jQuery", logo: "/iconsTech/jquery.png" },
-        { name: "Express", logo: "/iconsTech/express.png" },
-        { name: "Jest", logo: "/iconsTech/jest.png" },
+      { name: "jQuery", logo: "/iconsTech/jquery.png" },
+      { name: "Express", logo: "/iconsTech/express.png" },
+      { name: "Jest", logo: "/iconsTech/jest.png" },
     ],
   },
   {
