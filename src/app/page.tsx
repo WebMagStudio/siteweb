@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import Image from "next/image";
 // import { LatestPost } from "~/app/_components/post";
 import { api, HydrateClient } from "~/trpc/server";
 // import CTAButton from "./_components/ctaButton";
@@ -7,7 +7,10 @@ import HeroBanner from "./_components/heroBanner";
 import HeadingBlock from "./_components/headingBlock";
 import ServiceCard from "./_components/serviceCard";
 import { servicesList } from "../data/servicesList";
-import ProjectCard from "./_components/projectCard";
+// import ProjectCard from "./_components/projectCard";
+// import { projectsList } from "~/data/projectsList";
+import ProjectsGrid from "./_components/projectsGrid";
+import CTABanner from "./_components/ctaBanner";
 
 export default async function Home() {
   const hello = await api.post.hello({ text: "from tRPC" });
@@ -16,7 +19,7 @@ export default async function Home() {
 
   return (
     <HydrateClient>
-      <main className="flex min-h-screen flex-col items-center justify-center text-white">
+      <main className="mx-auto flex min-h-screen max-w-[1240px] flex-col items-center justify-center px-4 text-white">
         <HeroBanner
           title={
             <>
@@ -43,7 +46,7 @@ export default async function Home() {
               </>
             }
           />
-          <div className="grid grid-cols-1 gap-6 px-4 lg:grid-cols-3 lg:gap-8 xl:gap-10">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8 xl:gap-10">
             {servicesList.map((service) => (
               <ServiceCard key={service.id} {...service} />
             ))}
@@ -60,48 +63,66 @@ export default async function Home() {
               </>
             }
           />
-          <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-6 px-4 lg:grid-cols-2 lg:gap-8 xl:gap-10">
-            <ProjectCard
-              title="Argent bank"
-              description="Utiliser le state manager Redux pour gérer l'état de l'application"
-              category="App web"
-              image="/img/argent-bank.png"
-              liveDemo="https://www.behance.net/gallery/196270895/Lets-Sport"
-              sourceCode="https://github.com/Magma73/Projet-2-Transformez-une-maquette-en-site-web-avec-HTML-CSS-Booki"
-              technologies={[
-                { name: "Adobe XD", logo: "/iconsTech/adobexd.png" },
-                { name: "Invision", logo: "/iconsTech/invision.png" },
-                { name: "Flow Mapp", logo: "/iconsTech/flowmapp.png" },
-              ]}
-            />
-            <ProjectCard
-              title="Let's sport"
-              description="Concevoir une app mobile pour favoriser le sport entre amis"
-              category="Design graphique"
-              image="/img/lets-sport.png"
-              liveDemo="null"
-              sourceCode="https://www.behance.net/gallery/196270895/Lets-Sport"
-              technologies={[
-                { name: "Adobe XD", logo: "/iconsTech/adobexd.png" },
-                { name: "Invision", logo: "/iconsTech/invision.png" },
-                { name: "Flow Mapp", logo: "/iconsTech/flowmapp.png" },
-              ]}
-            />
-            <ProjectCard
-              title="GameOn"
-              description="Créer une landing page avec Javascript"
-              category="Site web"
-              image="/img/gameon.png"
-              liveDemo="https://magma73.github.io/Projet-4-Creer-une-landing-page-avec-Javascript/"
-              sourceCode="https://github.com/Magma73/Projet-4-Creer-une-landing-page-avec-Javascript"
-              technologies={[
-                { name: "HTML", logo: "/iconsTech/react.png" },
-                { name: "CSS", logo: "/iconsTech/css.png" },
-                { name: "Bootstrap", logo: "/iconsTech/bootstrap.png" },
-                { name: "SASS", logo: "/iconsTech/sass.png" },
-              ]}
-            />
+          <ProjectsGrid />
+          {/* <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8 xl:gap-10">
+            {[...projectsList]
+              .sort((a, b) => b.id - a.id) // tri décroissant par id
+              .slice(0, visibleCount)
+              .map((project) => (
+                <ProjectCard key={project.id} {...project} />
+              ))}
           </div>
+          <div className="my-10 w-full sm:max-w-3xl mx-auto lg:mx-0">
+            <button onClick={() => setVisibleCount(visibleCount + 4)} className="flex gap-2 rounded-lg border border-stroke-article bg-gradient-to-r from-nocture to-eclipse p-4 text-sm font-medium transition duration-200 hover:shadow-md hover:shadow-stroke-article">
+              <Image src="/icons/addmore.svg" width={19} height={19} alt="" />
+              Afficher plus
+            </button>
+          </div> */}
+        </section>
+        <section className="relative w-full">
+          {/* <div
+        className="absolute inset-0 -z-20"
+                  style={{
+          backgroundColor: "#05041f",
+          backgroundImage:
+            "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(to right, #ffffff 1px, transparent 1px)",
+          backgroundSize: "92px 92px",
+          opacity: 0.3,
+        }}
+      />
+
+      {/* Tâches lumineuses */}
+          {/* <div className="absolute top-[20%] left-[15%] w-12 h-20 bg-gradient-to-b from-white/70 to-transparent opacity-20 -z-10" />
+      <div className="absolute top-[10%] left-[50%] w-12 h-20 bg-gradient-to-b from-white/70 to-transparent opacity-20 -z-10" />
+      <div className="absolute top-[35%] left-[35%] w-12 h-20 bg-gradient-to-b from-white/70 to-transparent opacity-20 -z-10" />
+      <div className="absolute top-[50%] left-[65%] w-12 h-20 bg-gradient-to-b from-white/70 to-transparent opacity-20 -z-10" />
+      <div className="absolute top-[65%] left-[30%] w-12 h-20 bg-gradient-to-b from-white/70 to-transparent opacity-20 -z-10" /> */}
+
+          {/* <div className="w-full absolute top-130 -left-43 inset-0 -z-10 bg-[url('/img/Container.png')] bg-no-repeat bg-cover bg-center" /> */}
+
+          {/* <div
+    className="w-full aspect-[1/1] absolute -left-[40px] -top-[346px] -z-10 bg-[url('/img/Container.png')] bg-no-repeat bg-cover bg-center"
+  /> */}
+
+          <div className="absolute -left-[40px] -z-10 aspect-[1/1] w-full -translate-y-1/3 bg-[url('/img/Container.png')] bg-cover bg-center bg-no-repeat" />
+
+          <CTABanner
+            title={
+              <>
+                Parlons de votre{" "}
+                <span className="text-purple-300">projet !</span>
+              </>
+            }
+            textBanner={
+              <>
+                N'attendez plus pour booster votre visibilité en ligne ! <br />
+                Contactez-moi dès maintenant et ensemble, donnons vie à vos
+                idées.
+              </>
+            }
+            href="#"
+            text="Je réserve ma consultation gratuite"
+          />
         </section>
         {/* <CTAButton href="/contact" text="Lancez votre projet" /> */}
         {/* <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
