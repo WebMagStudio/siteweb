@@ -1,20 +1,50 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import ProjectCard from "./projectCard";
 import { projectsList } from "~/data/projectsList";
+import FilterButton from "./filterButton";
 
 export default function ProjectsGrid() {
   const [visibleCount, setVisibleCount] = useState(4);
-  const isAllVisible = visibleCount >= projectsList.length;
-
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const buttonRef = useRef<HTMLDivElement>(null);
+
+  const isAllVisible = selectedCategory
+    ? visibleCount >=
+      projectsList.filter((project) =>
+        Array.isArray(project.category)
+          ? project.category.includes(selectedCategory)
+          : project.category === selectedCategory,
+      ).length
+    : visibleCount >= projectsList.length;
+
+  // Filtrage des projets
+  const filteredProjects = selectedCategory
+    ? projectsList.filter((project) =>
+        Array.isArray(project.category)
+          ? project.category.includes(selectedCategory)
+          : project.category === selectedCategory,
+      )
+    : projectsList;
+
+  // Remet le compteur à 4 quand on change de filtre
+  useEffect(() => {
+    setVisibleCount(4);
+  }, [selectedCategory]);
+
+  // Extraire les catégories uniques
+  const categories = Array.from(
+    new Set(
+      projectsList.flatMap((project) =>
+        Array.isArray(project.category) ? project.category : [project.category],
+      ),
+    ),
+  );
 
   const handleClick = () => {
     setVisibleCount((prev) => prev + 4);
-
-    // Scroll vers le bouton après un court délai
     setTimeout(() => {
       buttonRef.current?.scrollIntoView({
         behavior: "smooth",
@@ -25,9 +55,27 @@ export default function ProjectsGrid() {
 
   return (
     <div>
+      <div className="mx-auto my-8 flex w-full flex-wrap gap-4 sm:max-w-3xl md:gap-6 lg:mx-0">
+        <FilterButton
+          text="Tous"
+          isActive={selectedCategory === null}
+          onClick={() => setSelectedCategory(null)}
+        />
+
+        <div className="flex flex-wrap gap-4 md:gap-6">
+          {categories.map((category) => (
+            <FilterButton
+              key={`cat-${category}`}
+              text={category}
+              isActive={selectedCategory === category}
+              onClick={() => setSelectedCategory(category)}
+            />
+          ))}
+        </div>
+      </div>
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8 xl:gap-10">
-        {[...projectsList]
-          .sort((a, b) => b.id - a.id) // tri décroissant par id
+        {[...filteredProjects]
+          .sort((a, b) => b.id - a.id) // tri par ordre décroissant
           .slice(0, visibleCount)
           .map((project) => (
             <ProjectCard key={project.id} {...project} />

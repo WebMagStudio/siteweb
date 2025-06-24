@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 import Image from "next/image";
-import { PlusIcon } from "@heroicons/react/24/outline";
-import { map } from "zod";
 
 type ProjectCardProps = {
   title: string;
