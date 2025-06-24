@@ -5,6 +5,8 @@ import ServiceCard from "./_components/serviceCard";
 import { servicesList } from "../data/servicesList";
 import ProjectsGrid from "./_components/projectsGrid";
 import CTABanner from "./_components/ctaBanner";
+import TestimonialCard from "./_components/testimonialCard";
+import { testimonialsList } from "~/data/testimonialsList";
 
 export default async function Home() {
   const hello = await api.post.hello({ text: "from tRPC" });
@@ -59,6 +61,32 @@ export default async function Home() {
           />
           <ProjectsGrid />
         </section>
+
+        <section className="my-12 w-full">
+          <HeadingBlock
+            preTitle="Témoignages"
+            title={
+              <>
+                Ce qu'ils <span className="text-purple-300">disent de moi</span>
+              </>
+            }
+          />
+          <div className="mt-8 overflow-x-auto">
+            <div className="flex w-max gap-6 px-4">
+              {testimonialsList.map((testimonial) => (
+                <TestimonialCard
+                  key={testimonial.id}
+                  firstName={testimonial.firstName}
+                  lastName={testimonial.lastName}
+                  role={testimonial.role}
+                  society={testimonial.society}
+                  message={testimonial.message}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="relative w-full">
           <div className="absolute -left-[40px] -z-10 aspect-[1/1] w-full -translate-y-1/3 bg-[url('/img/Container.png')] bg-cover bg-center bg-no-repeat" />
 
