@@ -42,6 +42,8 @@ export default {
         "stroke-article": "rgba(54, 55, 73, 0.43)",
         mistyLavender: "#BEC1DD",
         midnight: "#13162D",
+        nocture: "#161A31",
+        eclipse: "#06091F",
         // warning: "#F24E1E", //
         // warningGradient: "#FF7262",
       },

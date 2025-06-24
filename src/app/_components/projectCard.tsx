@@ -12,6 +12,7 @@ type ProjectCardProps = {
   liveDemo?: string | null;
   sourceCode?: string | null;
   technologies: { name: string; logo: string }[];
+  className?: string;
 };
 
 export default function ProjectCard({
@@ -22,16 +23,19 @@ export default function ProjectCard({
   liveDemo,
   sourceCode,
   technologies,
+  className = "",
 }: ProjectCardProps) {
   return (
-    <article className="mx-auto flex w-full flex-col justify-between gap-6 rounded-3xl border border-stroke-article bg-gradient-to-br from-bg-gradient-dark-start to-bg-gradient-dark-end px-4 py-6 sm:max-w-3xl md:px-6 md:py-10 xl:aspect-[600/618] xl:max-w-[600px]">
-      <div className="flex w-full flex-col items-center justify-center overflow-hidden rounded-2xl bg-midnight bg-[url(/bg/bg-card.png)] bg-cover bg-center xl:aspect-[552/330] xl:max-w-[552px]">
+    <article
+      className={`mx-auto flex w-full flex-col justify-between gap-6 rounded-3xl border border-stroke-article bg-gradient-to-br from-bg-gradient-dark-start to-bg-gradient-dark-end px-4 py-6 sm:max-w-3xl md:px-6 md:py-10 xl:aspect-[600/618] xl:min-h-[618px] xl:max-w-[600px]${className}`}
+    >
+      <div className="flex aspect-[370/218] h-[218px] w-full flex-col items-center justify-center overflow-hidden rounded-2xl bg-midnight bg-[url(/bg/bg-card.png)] bg-cover bg-center sm:aspect-[552/330] md:h-[330px] xl:max-w-[552px]">
         <Image
           src={image}
           width={450}
           height={320}
           alt=""
-          className="relative top-9 rotate-3 rounded-lg"
+          className="relative top-12 max-h-[320px] rotate-3 rounded-lg object-cover sm:top-9"
         />
       </div>
 
@@ -58,6 +62,7 @@ export default function ProjectCard({
                   src={tech.logo}
                   width={17}
                   height={17}
+                  title={tech.name}
                   alt={tech.name}
                   className="object-contain xl:h-[24px] xl:w-[24px]"
                 />
