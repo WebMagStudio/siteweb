@@ -7,6 +7,7 @@ import ProjectsGrid from "./_components/projectsGrid";
 import CTABanner from "./_components/ctaBanner";
 import TestimonialCard from "./_components/testimonialCard";
 import { testimonialsList } from "~/data/testimonialsList";
+import CVDownloadCard from "./_components/CVDownloadCard";
 
 export default async function Home() {
   const hello = await api.post.hello({ text: "from tRPC" });
@@ -85,6 +86,25 @@ export default async function Home() {
               ))}
             </div>
           </div>
+        </section>
+
+        <section className="my-12 w-full">
+          <HeadingBlock
+            preTitle="À propos"
+            title={
+              <>
+                À propos de <span className="text-purple-300">moi</span>
+              </>
+            }
+          />
+          <CVDownloadCard />
+          <p className="max-w-5xl mx-10 my-12 ">
+            C’est le moment des présentations 🙂 ! <br />
+            Je suis Marine Magnin, développeuse front-end. <br />
+            Ce que j’aime dans mon métier ? Transformer des idées en sites clairs, efficaces et agréables à utiliser.
+            Issue d’une formation full-stack, j’ai choisi de me concentrer sur le front pour allier sens du détail, créativité et souci de l’expérience utilisateur.
+            Mon objectif : créer des sites sur mesure qui font vraiment la différence pour mes clients.
+          </p>
         </section>
 
         <section className="relative w-full">
