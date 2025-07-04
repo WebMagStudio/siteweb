@@ -6,7 +6,6 @@ import { servicesList } from "../data/servicesList";
 import ProjectsGrid from "./_components/projectsGrid";
 import CTABanner from "./_components/ctaBanner";
 import TestimonialCard from "./_components/testimonialCard";
-import { testimonialsList } from "~/data/testimonialsList";
 import CVDownloadCard from "./_components/CVDownloadCard";
 
 export default async function Home() {
@@ -72,19 +71,8 @@ export default async function Home() {
               </>
             }
           />
-          <div className="mt-8 overflow-x-auto">
-            <div className="flex w-max gap-6 px-4">
-              {testimonialsList.map((testimonial) => (
-                <TestimonialCard
-                  key={testimonial.id}
-                  firstName={testimonial.firstName}
-                  lastName={testimonial.lastName}
-                  role={testimonial.role}
-                  society={testimonial.society}
-                  message={testimonial.message}
-                />
-              ))}
-            </div>
+          <div className="mt-8">
+            <TestimonialsCarousel />
           </div>
         </section>
 
