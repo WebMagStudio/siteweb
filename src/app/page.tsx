@@ -5,7 +5,7 @@ import ServiceCard from "./_components/serviceCard";
 import { servicesList } from "../data/servicesList";
 import ProjectsGrid from "./_components/projectsGrid";
 import CTABanner from "./_components/ctaBanner";
-import TestimonialCard from "./_components/testimonialCard";
+import TestimonialsCarousel from "./_components/testimonialsCarousel";
 import CVDownloadCard from "./_components/CVDownloadCard";
 
 export default async function Home() {
