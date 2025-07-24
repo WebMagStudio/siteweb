@@ -14,7 +14,7 @@ type Blog = {
 export const blogList: Blog[] = [
   {
     id: 1,
-    image: "/sapin.jpg",
+    image: "/img/ouistitree.png",
     title:
       "Refonte éditoriale d’un site vitrine pour une présence en ligne plus impactante : Ouisti’Tree, expert arboricole",
     author: "Marine Magnin",
@@ -26,7 +26,7 @@ export const blogList: Blog[] = [
   },
   {
     id: 2,
-    image: "/portfolio.jpg",
+    image: "/img/portfolio.jpg",
     title: "Top 10 des alternatives (zéro déchet) au sapin naturel",
     author: "Marine Magnin",
     date: "25/04/2024",
@@ -37,7 +37,7 @@ export const blogList: Blog[] = [
   },
   {
     id: 3,
-    image: "/portfolio.jpg",
+    image: "/img/portfolio.jpg",
     title: "Les 10 films écolos à (re)voir",
     author: "Marine Magnin",
     date: "26/04/2024",
@@ -48,7 +48,7 @@ export const blogList: Blog[] = [
   },
   {
     id: 4,
-    image: "/portfolio.jpg",
+    image: "/img/portfolio.jpg",
     title:
       "Le match : sapin naturel ou artificiel ? Lequel choisir cette année ?",
     author: "Marine Magnin",

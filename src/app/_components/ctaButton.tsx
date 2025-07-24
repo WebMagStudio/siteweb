@@ -18,7 +18,7 @@ export default function CTAButton({
   return (
     <Link
       href={href}
-      className={`inline-flex w-fit gap-2 rounded-xl px-8 py-4 sm:px-10 sm:py-6 font-medium text-md sm:text-lg text-white text-center bg-gradient-to-r from-purple-300 to-purple-600 transition-all duration-700 ease-in-out hover:from-fushia hover:to-amber ${className}`}
+      className={`text-md inline-flex w-fit gap-2 rounded-xl bg-gradient-to-r from-purple-300 to-purple-600 px-8 py-4 text-center font-medium text-white transition-all duration-700 ease-in-out hover:from-fushia hover:to-amber sm:px-10 sm:py-6 sm:text-lg ${className}`}
     >
       {iconLeft && <span className="flex items-center">{iconLeft}</span>}
       {text}
