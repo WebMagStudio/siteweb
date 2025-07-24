@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
@@ -21,14 +22,20 @@ export default function BlogCarousel() {
   };
 
   return (
-    <div className="relative overflow-hidden w-full">
+    <div className="relative w-full overflow-hidden">
       {/* Flèche gauche */}
       {currentIndex > 0 && (
         <button
           onClick={prevSlide}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 rounded-full bg-black/60 p-2"
+          className="absolute -left-[1px] top-1/2 z-10 -translate-y-1/2"
         >
-          <ChevronLeftIcon className="size-8 text-white" />
+          <Image
+            className="mr-2"
+            src="/icons/chevronleft.svg"
+            alt=""
+            width={19}
+            height={19}
+          />
         </button>
       )}
 
@@ -41,14 +48,7 @@ export default function BlogCarousel() {
           }}
         >
           {blogList.map((blogCard) => (
-            <div
-              key={blogCard.id}
-              className="
-                flex-shrink-0
-                w-full
-                md:w-1/2
-              "
-            >
+            <div key={blogCard.id} className="w-full flex-shrink-0 md:w-1/2">
               <BlogCard {...blogCard} />
             </div>
           ))}
@@ -59,9 +59,15 @@ export default function BlogCarousel() {
       {currentIndex < blogList.length - 1 && (
         <button
           onClick={nextSlide}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 rounded-full bg-black/60 p-2"
+          className="absolute -right-2 top-1/2 z-10 -translate-y-1/2"
         >
-          <ChevronRightIcon className="size-8 text-white" />
+          <Image
+            className="mr-2"
+            src="/icons/chevronright.svg"
+            alt=""
+            width={19}
+            height={19}
+          />
         </button>
       )}
     </div>

@@ -6,6 +6,7 @@ import { servicesList } from "../data/servicesList";
 import ProjectsGrid from "./_components/projectsGrid";
 import CTABanner from "./_components/ctaBanner";
 import TestimonialsCarousel from "./_components/testimonialsCarousel";
+import BlogCarousel from "./_components/blogCarousel";
 import CVDownloadCard from "./_components/CVDownloadCard";
 
 export default async function Home() {
@@ -78,6 +79,21 @@ export default async function Home() {
 
         <section className="my-12 w-full">
           <HeadingBlock
+            preTitle="Blog"
+            title={
+              <>
+                Nouveautés du <span className="text-purple-300">blog</span>
+              </>
+            }
+          />
+
+          <div className="mt-8">
+            <BlogCarousel />
+          </div>
+        </section>
+
+        <section className="my-12 w-full">
+          <HeadingBlock
             preTitle="À propos"
             title={
               <>
@@ -86,12 +102,15 @@ export default async function Home() {
             }
           />
           <CVDownloadCard />
-          <p className="max-w-5xl mx-10 my-12 ">
+          <p className="mx-10 my-12 max-w-5xl">
             C’est le moment des présentations 🙂 ! <br />
             Je suis Marine Magnin, développeuse front-end. <br />
-            Ce que j’aime dans mon métier ? Transformer des idées en sites clairs, efficaces et agréables à utiliser.
-            Issue d’une formation full-stack, j’ai choisi de me concentrer sur le front pour allier sens du détail, créativité et souci de l’expérience utilisateur.
-            Mon objectif : créer des sites sur mesure qui font vraiment la différence pour mes clients.
+            Ce que j’aime dans mon métier ? Transformer des idées en sites
+            clairs, efficaces et agréables à utiliser. Issue d’une formation
+            full-stack, j’ai choisi de me concentrer sur le front pour allier
+            sens du détail, créativité et souci de l’expérience utilisateur. Mon
+            objectif : créer des sites sur mesure qui font vraiment la
+            différence pour mes clients.
           </p>
         </section>
 
@@ -116,6 +135,7 @@ export default async function Home() {
             text="Je réserve ma consultation gratuite"
           />
         </section>
+
         {/* <CTAButton href="/contact" text="Lancez votre projet" /> */}
         {/* <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
             <Link
