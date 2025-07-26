@@ -44,6 +44,7 @@ export default {
         midnight: "#13162D",
         nocture: "#161A31",
         eclipse: "#06091F",
+        warning: "#C34124",
         // warning: "#F24E1E", //
         // warningGradient: "#FF7262",
       },

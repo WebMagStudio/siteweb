@@ -8,6 +8,7 @@ import CTABanner from "./_components/ctaBanner";
 import TestimonialsCarousel from "./_components/testimonialsCarousel";
 import BlogCarousel from "./_components/blogCarousel";
 import CVDownloadCard from "./_components/CVDownloadCard";
+import ContactForm from "./_components/contactForm";
 
 export default async function Home() {
   const hello = await api.post.hello({ text: "from tRPC" });
@@ -134,6 +135,29 @@ export default async function Home() {
             href="#"
             text="Je réserve ma consultation gratuite"
           />
+        </section>
+
+        <section className="my-12 w-full">
+          <HeadingBlock
+            preTitle="Contact"
+            title={
+              <>
+                <span className="text-purple-300">Contactez - moi</span>
+              </>
+            }
+          />
+          <p className="mb-12 text-center">
+            {
+              <>
+                Je suis ravie que vous ayez pris le temps de visiter mon
+                portfolio !<br />
+                Vous pouvez me joindre en utilisant le formulaire de contact
+                ci-dessous. <br />
+                Je suis impatiente d’échanger avec vous !
+              </>
+            }
+          </p>
+          <ContactForm />
         </section>
 
         {/* <CTAButton href="/contact" text="Lancez votre projet" /> */}
