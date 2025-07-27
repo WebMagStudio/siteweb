@@ -9,6 +9,9 @@ import TestimonialsCarousel from "./_components/testimonialsCarousel";
 import BlogCarousel from "./_components/blogCarousel";
 import CVDownloadCard from "./_components/CVDownloadCard";
 import ContactForm from "./_components/contactForm";
+import CardInfo from "./_components/cardInfo";
+
+import { MapPinIcon, PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 
 export default async function Home() {
   const hello = await api.post.hello({ text: "from tRPC" });
@@ -157,7 +160,31 @@ export default async function Home() {
               </>
             }
           </p>
-          <ContactForm />
+          <div className="flex flex-wrap justify-center gap-6">
+            <div className="flex justify-between flex-1 max-w-[600px] w-full flex-col gap-6">
+              <CardInfo
+                icon={<MapPinIcon className="h-8 w-8" />}
+                content={
+                  <>
+                    Savoie, Isère, Haute-Savoie, Rhône <br /> + <br />{" "}
+                    Télétravail
+                  </>
+                }
+              />
+              <CardInfo
+                icon={<PhoneIcon className="h-8 w-8" />}
+                content="06.70.45.59.84"
+              />
+              <CardInfo
+                icon={<EnvelopeIcon className="h-8 w-8" />}
+                content="marine.magnin73@gmail.com"
+              />
+            </div>
+
+            <div className="flex-1 max-w-[600px] w-full">
+              <ContactForm />
+            </div>
+          </div>
         </section>
 
         {/* <CTAButton href="/contact" text="Lancez votre projet" /> */}
