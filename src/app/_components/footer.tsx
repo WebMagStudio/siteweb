@@ -3,7 +3,7 @@ import SocialIconLink from "./socialIconLink";
 
 export default function Footer() {
   return (
-    <footer className="mx-auto flex flex-col md:flex-row max-w-[1240px] items-center justify-between px-4 py-12 text-sm text-white xl:px-[0px]">
+    <footer className="mx-auto flex flex-col md:flex-row max-w-[1240px] items-center justify-between px-4 md:px-12 lg:px-4 py-12 text-sm text-white xl:px-[0px]">
       <div className="flex flex-col lg:flex-row items-center md:items-start justify-between gap-4 lg:gap-12">
         <p className="text-center md:text-left">Copyright ©2025 Marine Magnin. Tous droits réservés.</p>
         <Link href="#">Mentions légales</Link>

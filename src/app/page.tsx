@@ -160,7 +160,7 @@ export default async function Home() {
               </>
             }
           </p>
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8">
             <div className="flex w-full max-w-[600px] flex-1 flex-col justify-between gap-6">
               <CardInfo
                 icon={<MapPinIcon className="h-8 w-8" />}
