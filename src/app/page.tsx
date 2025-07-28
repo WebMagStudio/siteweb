@@ -161,7 +161,7 @@ export default async function Home() {
             }
           </p>
           <div className="flex flex-wrap justify-center gap-6">
-            <div className="flex justify-between flex-1 max-w-[600px] w-full flex-col gap-6">
+            <div className="flex w-full max-w-[600px] flex-1 flex-col justify-between gap-6">
               <CardInfo
                 icon={<MapPinIcon className="h-8 w-8" />}
                 content={
@@ -181,7 +181,7 @@ export default async function Home() {
               />
             </div>
 
-            <div className="flex-1 max-w-[600px] w-full">
+            <div className="w-full max-w-[600px] flex-1">
               <ContactForm />
             </div>
           </div>
