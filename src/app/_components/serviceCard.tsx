@@ -19,11 +19,11 @@ export default function ServiceCard({
   icon,
 }: ServiceCardProps) {
   return (
-    <article className="relative mx-auto flex w-full flex-col justify-between gap-12 rounded-3xl border border-stroke-article bg-gradient-to-br from-bg-gradient-dark-start to-bg-gradient-dark-end p-6 sm:max-w-3xl lg:min-h-[675px] lg:max-w-[387px]">
-      <PlusIcon className="absolute -left-4 -top-4 h-12 w-12 text-white opacity-20" />
-      <PlusIcon className="absolute -right-4 -top-4 h-12 w-12 text-white opacity-20" />
-      <PlusIcon className="absolute -bottom-4 -left-4 h-12 w-12 text-white opacity-20" />
-      <PlusIcon className="absolute -bottom-4 -right-4 h-12 w-12 text-white opacity-20" />
+    <article className="relative mx-auto flex w-full flex-col justify-between gap-12 rounded-3xl bg-gradient-to-br from-accent to-accent-light p-6 sm:max-w-3xl lg:min-h-[675px] lg:max-w-[387px]">
+      <PlusIcon className="absolute -left-4 -top-4 h-12 w-12 text-primary opacity-20" />
+      <PlusIcon className="absolute -right-4 -top-4 h-12 w-12 text-primary opacity-20" />
+      <PlusIcon className="absolute -bottom-4 -left-4 h-12 w-12 text-primary opacity-20" />
+      <PlusIcon className="absolute -bottom-4 -right-4 h-12 w-12 text-primary opacity-20" />
 
       <div className="flex flex-col gap-4 lg:translate-y-[100px]">
         <header className="flex flex-col gap-4">
@@ -41,7 +41,7 @@ export default function ServiceCard({
         </Link>
         <Link
           href={link}
-          className="relative inline-block text-base font-medium text-purple-300 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-purple-300 before:transition-all before:duration-300 hover:before:w-full"
+          className="relative inline-block text-base font-medium text-primary before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-primary before:transition-all before:duration-300 hover:before:w-full"
         >
           {cta}
         </Link>

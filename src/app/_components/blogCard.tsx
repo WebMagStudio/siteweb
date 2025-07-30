@@ -22,16 +22,17 @@ export default function BlogCard({
   cta,
 }: BlogCardProps) {
   return (
-    <article className="mx-6 my-6 flex min-h-[778px] max-w-[572px] flex-col justify-between rounded-3xl border border-stroke-article bg-gradient-to-br from-bg-gradient-dark-start to-bg-gradient-dark-end p-[24px] sm:p-[50px]">
-      <div className="flex aspect-[370/218] h-[218px] w-full flex-col items-center justify-center overflow-hidden rounded-2xl bg-midnight bg-[url(/bg/bg-card.png)] bg-cover bg-center sm:aspect-[552/330] md:h-[330px] xl:max-w-[552px]">
-        <Image
-          src={image}
-          width={450}
-          height={320}
-          alt=""
-          className="relative top-12 max-h-[320px] rotate-3 rounded-lg object-cover sm:top-9"
-        />
-      </div>
+    <article className="mx-6 my-6 flex min-h-[778px] max-w-[572px] flex-col justify-between rounded-3xl border bg-white p-[24px] shadow-md sm:p-[50px]">
+      {/* <div className="flex flex-col items-center justify-center overflow-hidden rounded-2xl sm:aspect-[552/330]"> */}
+      {/* <div className="flex aspect-[370/218] h-[218px] w-full flex-col items-center justify-center overflow-hidden rounded-2xl sm:aspect-[552/330] md:h-[330px] xl:max-w-[552px]"> */}
+      <Image
+        src={image}
+        width={450}
+        height={320}
+        alt=""
+        className="rounded-lg object-cover"
+      />
+      {/* </div> */}
       <h3 className="mb-4 mt-8 text-left text-xl font-bold sm:text-2xl">
         {title}
       </h3>
@@ -67,7 +68,7 @@ export default function BlogCard({
           {category}
         </li>
       </ul>
-      <p className="py-6 text-base font-normal text-white sm:text-lg">
+      <p className="py-6 text-base font-normal text-primary sm:text-lg">
         {message}
       </p>
 
@@ -83,7 +84,7 @@ export default function BlogCard({
         </Link>
         <Link
           href="#"
-          className="relative inline-block text-base font-medium text-purple-300 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-purple-300 before:transition-all before:duration-300 hover:before:w-full xl:text-xl"
+          className="relative inline-block text-base font-medium text-accent before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-accent before:transition-all before:duration-300 hover:before:w-full xl:text-xl"
         >
           {cta}
         </Link>

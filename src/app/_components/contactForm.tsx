@@ -256,13 +256,13 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="mx-auto w-full max-w-[600px] rounded-3xl bg-gradient-to-r from-bg-gradient-dark-start to-bg-gradient-dark-end p-10"
+      className="mx-auto w-full max-w-[600px] rounded-3xl bg-white p-6 shadow-md hover:shadow-lg"
     >
       {/* Champ Nom */}
       <div className="mb-6">
         <label
           htmlFor="first-name"
-          className="text-md block font-bold text-white"
+          className="text-md block font-bold text-primary"
         >
           Nom<span className="text-red-500"> *</span>
         </label>
@@ -270,7 +270,7 @@ export default function ContactForm() {
           id="first-name"
           type="text"
           {...register("firstName", { required: "Le nom est obligatoire." })}
-          className="mt-2 block w-full rounded-full bg-mistyLavender px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+          className="mt-2 block w-full rounded-full bg-accent/50 px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
         />
         {errors.firstName && (
           <p className="mt-1 text-sm text-red-500">
@@ -283,7 +283,7 @@ export default function ContactForm() {
       <div className="mb-6">
         <label
           htmlFor="last-name"
-          className="text-md block font-bold text-white"
+          className="text-md block font-bold text-primary"
         >
           Prénom<span className="text-red-500"> *</span>
         </label>
@@ -291,7 +291,7 @@ export default function ContactForm() {
           id="last-name"
           type="text"
           {...register("lastName", { required: "Le prénom est obligatoire." })}
-          className="mt-2 block w-full rounded-full bg-mistyLavender px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+          className="mt-2 block w-full rounded-full bg-accent/50 px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
         />
         {errors.lastName && (
           <p className="mt-1 text-sm text-red-500">{errors.lastName.message}</p>
@@ -300,7 +300,7 @@ export default function ContactForm() {
 
       {/* Champ Email */}
       <div className="mb-6">
-        <label htmlFor="email" className="text-md block font-bold text-white">
+        <label htmlFor="email" className="text-md block font-bold text-primary">
           E-mail<span className="text-red-500"> *</span>
         </label>
         <input
@@ -313,7 +313,7 @@ export default function ContactForm() {
               message: "Adresse e-mail invalide.",
             },
           })}
-          className="mt-2 block w-full rounded-full bg-mistyLavender px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+          className="mt-2 block w-full rounded-full bg-accent/50 px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
         />
         {errors.email && (
           <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>
@@ -322,14 +322,17 @@ export default function ContactForm() {
 
       {/* Champ Sujet */}
       <div className="mb-6">
-        <label htmlFor="subject" className="text-md block font-bold text-white">
+        <label
+          htmlFor="subject"
+          className="text-md block font-bold text-primary"
+        >
           Sujet<span className="text-red-500"> *</span>
         </label>
         <div className="relative mt-2 grid grid-cols-1">
           <select
             id="subject"
             {...register("subject", { required: "Le sujet est obligatoire." })}
-            className="col-start-1 row-start-1 w-full appearance-none rounded-full bg-mistyLavender py-1.5 pl-3 pr-8 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+            className="col-start-1 row-start-1 w-full appearance-none rounded-full bg-accent/50 py-1.5 pl-3 pr-8 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
           >
             <option value="">-- Sélectionnez --</option>
             <option value="rdv">Prendre RDV</option>
@@ -349,14 +352,17 @@ export default function ContactForm() {
 
       {/* Champ Message */}
       <div className="mb-6">
-        <label htmlFor="message" className="text-md block font-bold text-white">
+        <label
+          htmlFor="message"
+          className="text-md block font-bold text-primary"
+        >
           Message<span className="text-red-500"> *</span>
         </label>
         <textarea
           id="message"
           rows={3}
           {...register("message", { required: "Le message est obligatoire." })}
-          className="mt-2 block w-full rounded-xl bg-mistyLavender px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+          className="mt-2 block w-full rounded-xl bg-accent/50 px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
         />
         {errors.message && (
           <p className="mt-1 text-sm text-red-500">{errors.message.message}</p>
@@ -365,7 +371,7 @@ export default function ContactForm() {
 
       {/* Cases à cocher */}
       <fieldset className="my-6">
-        <legend className="text-md mb-4 font-bold text-white">
+        <legend className="text-md mb-4 font-bold text-primary">
           Veuillez cocher les cases ci-dessous :
           <span className="text-red-500"> *</span>
         </legend>
@@ -376,9 +382,9 @@ export default function ContactForm() {
             type="checkbox"
             id="autorisation"
             {...register("autorisation", { required: true })}
-            className="mt-1 size-4 rounded border-gray-300 text-purple-300 accent-purple-300 focus:ring-purple-300"
+            className="mt-1 size-4 rounded border-gray-300 text-accent accent-accent focus:ring-accent"
           />
-          <label htmlFor="autorisation" className="text-sm text-white">
+          <label htmlFor="autorisation" className="text-sm text-primary">
             J'autorise Marine Magnin à utiliser les informations personnelles
             transmises via ce formulaire pour me contacter uniquement dans le
             cadre de ma demande.
@@ -396,9 +402,9 @@ export default function ContactForm() {
             type="checkbox"
             id="confidentialite"
             {...register("confidentialite", { required: true })}
-            className="mt-1 size-4 rounded border-gray-300 text-purple-300 accent-purple-300 focus:ring-purple-300"
+            className="mt-1 size-4 rounded border-gray-300 text-accent accent-accent focus:ring-accent"
           />
-          <label htmlFor="confidentialite" className="text-sm text-white">
+          <label htmlFor="confidentialite" className="text-sm text-primary">
             En cliquant sur le bouton "Envoyer", je reconnais avoir pris
             connaissance et être en accord avec votre Politique de
             confidentialité.
@@ -415,7 +421,7 @@ export default function ContactForm() {
       <div className="flex justify-center pt-2">
         <button
           type="submit"
-          className="text-md inline-flex w-fit gap-2 rounded-xl bg-gradient-to-r from-purple-300 to-purple-600 px-8 py-4 text-center font-medium text-white transition-all duration-700 ease-in-out hover:from-fushia hover:to-amber focus:from-fushia focus:to-amber active:from-fushia active:to-amber sm:px-10 sm:py-6 sm:text-lg"
+          className="text-md inline-flex w-fit gap-2 rounded-xl bg-gradient-to-r from-[#003249] via-[#6A497A] to-[#832161] px-8 py-4 text-center font-medium text-white transition-all duration-700 ease-in-out hover:from-fushia hover:to-amber focus:from-fushia focus:to-amber active:from-fushia active:to-amber sm:px-10 sm:py-6 sm:text-lg"
         >
           Envoyer
         </button>

@@ -11,7 +11,7 @@
     top:28px;
     margin: auto;
     border-radius: 100%;
-    background-color: theme('colors.white');
+    background-color: theme('colors.primary');
     transition: opacity 0.3s ease, box-shadow 0.3s ease;
     opacity: 0;
   }
@@ -19,15 +19,10 @@
   .link-underline-circle.active::after,
   .link-underline-circle:hover::after {
     opacity: 1;
-    box-shadow: 0 0 8px 2px theme('colors.navy-950');
+    box-shadow: 0 0 8px 2px theme('colors.accent');
   }
   
-  .dark .link-underline-circle::after {
-    background-color: white;
-    box-shadow: none;
-  }
-
-  .scrollbar-hidden::-webkit-scrollbar {
+   .scrollbar-hidden::-webkit-scrollbar {
   display: none;
 }
 .scrollbar-hidden {

@@ -3,13 +3,14 @@ import CTAButton from "./ctaButton";
 
 export default function CVDownloadCard() {
   return (
-    <div className="flex min-h-[253px] max-w-[1240px] flex-wrap items-center justify-center rounded-3xl border border-stroke-article bg-gradient-to-r from-bg-gradient-dark-start to-bg-gradient-dark-end p-[24px] sm:p-[50px] md:justify-between lg:p-[66px]">
+    <div className="relative flex min-h-[253px] max-w-[1240px] flex-wrap items-center justify-center overflow-hidden rounded-3xl border bg-[url(/bg/bg-card.png)] bg-cover p-[24px] shadow-md sm:p-[50px] md:justify-between lg:p-[66px]">
+      {/* <div className="pointer-events-none absolute -top-[94px] -right-[16px] h-48 w-48 rounded-full bg-gradient-to-r from-accent-light via-accent to-secondary opacity-50 blur-3xl z-0" /> */}
       <div className="pr-4">
-        <p className="pb-6 text-xl font-semibold text-white sm:text-2xl md:text-3xl">
+        <p className="pb-6 text-xl font-semibold text-primary sm:text-2xl md:text-3xl">
           CV Marine Magnin Développeur Front-End
         </p>
-        <p className="text-md pb-6 font-normal text-white md:text-xl">
-          Besoin d'en savoir plus sur mon parcours, télécharge mon CV en ligne.
+        <p className="text-md pb-6 font-normal text-primary md:text-xl">
+          Besoin d'en savoir plus sur mon parcours, téléchargez mon CV en ligne.
         </p>
       </div>
 

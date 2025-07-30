@@ -16,11 +16,11 @@ export default function CTABanner({
   className = "",
 }: CtaPropos) {
   return (
-    <div className="mx-auto flex max-w-[720px] flex-col">
-      <h4 className="py-6 text-center text-3xl font-bold text-white sm:py-10 sm:text-5xl">
+    <div className={`mx-auto flex max-w-[720px] flex-col ${className}`}>
+      <h4 className="py-6 text-center text-3xl font-bold sm:py-10 sm:text-5xl">
         {title}
       </h4>
-      <p className="font-regular pl-8 text-left text-base leading-[1.5] text-white sm:text-xl">
+      <p className="font-regular pl-8 text-left text-base leading-[1.5] sm:text-xl">
         {textBanner}
       </p>
       <CTAButton
