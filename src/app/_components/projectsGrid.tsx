@@ -89,7 +89,7 @@ export default function ProjectsGrid() {
         {!isAllVisible && (
           <button
             onClick={handleClick}
-            className="flex gap-2 rounded-lg border border-stroke-article bg-gradient-to-r from-nocture to-eclipse p-4 text-sm font-medium transition duration-200 hover:shadow-md hover:shadow-stroke-article"
+            className="flex gap-2 rounded-lg border bg-gradient-to-r from-accent-light via-accent to-accent-dark p-4 text-sm font-medium text-white transition duration-200 hover:shadow-md"
           >
             <Image src="/icons/addmore.svg" width={19} height={19} alt="" />
             Afficher plus

@@ -9,6 +9,15 @@ export default {
       fontFamily: {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
       },
+       keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(-0.35rem)' },
+          '50%': { transform: 'translateY(0)' },
+        },
+      },
+      animation: {
+        float: 'float 1.5s ease-in-out infinite',
+      },
       colors: {
         // colorPurple300: "#CBACF9", //
         // primaryGradient: "#7E5DB0",

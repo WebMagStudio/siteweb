@@ -22,7 +22,7 @@ export default function BlogCard({
   cta,
 }: BlogCardProps) {
   return (
-    <article className="mx-6 my-6 flex min-h-[778px] max-w-[572px] flex-col justify-between rounded-3xl border bg-white p-[24px] shadow-md sm:p-[50px]">
+    <article className="mx-6 my-6 flex min-h-[778px] max-w-[572px] flex-col justify-between rounded-3xl border bg-[url(/bg/bg-card.png)] bg-cover bg-top p-[24px] shadow-md sm:p-[50px]">
       {/* <div className="flex flex-col items-center justify-center overflow-hidden rounded-2xl sm:aspect-[552/330]"> */}
       {/* <div className="flex aspect-[370/218] h-[218px] w-full flex-col items-center justify-center overflow-hidden rounded-2xl sm:aspect-[552/330] md:h-[330px] xl:max-w-[552px]"> */}
       <Image

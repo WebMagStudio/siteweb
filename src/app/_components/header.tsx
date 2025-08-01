@@ -124,8 +124,8 @@ export default function Header() {
                 <PopoverButton className="flex items-center gap-x-1 text-base/6 font-medium text-white hover:text-white"> */}
         <div className="hidden px-12 py-6 text-white lg:flex lg:gap-x-8 xl:gap-x-12">
           <Link
-            className={`link ${pathname === "/services" ? "active text-primary" : ""} link-underline-circle text-base font-medium text-white hover:text-primary`}
-            href="/services"
+            className={`link ${pathname === "#services" ? "active text-primary" : ""} link-underline-circle text-base font-medium text-white hover:text-primary`}
+            href="#services"
           >
             Nos services
           </Link>
@@ -174,29 +174,29 @@ export default function Header() {
           {/* </Popover> */}
 
           <Link
-            className={`link ${pathname === "/realisations" ? "active text-primary" : ""} link-underline-circle text-base font-medium text-white hover:text-primary`}
-            href="/realisations"
+            className={`link ${pathname === "#realisations" ? "active text-primary" : ""} link-underline-circle text-base font-medium text-white hover:text-primary`}
+            href="#realisations"
           >
             Réalisations
           </Link>
 
           <Link
-            className={`link ${pathname === "/apropos" ? "active text-primary" : ""} link-underline-circle text-base font-medium text-white hover:text-primary`}
-            href="/apropos"
+            className={`link ${pathname === "#apropos" ? "active text-primary" : ""} link-underline-circle text-base font-medium text-white hover:text-primary`}
+            href="#apropos"
           >
             À propos
           </Link>
 
           <Link
-            className={`link ${pathname === "/blog" ? "active text-primary" : ""} link-underline-circle text-whitet text-base font-medium hover:text-primary`}
-            href="/blog"
+            className={`link ${pathname === "#blog" ? "active text-primary" : ""} link-underline-circle text-whitet text-base font-medium hover:text-primary`}
+            href="#blog"
           >
             Blog
           </Link>
 
           <Link
-            className={`link ${pathname === "/contact" ? "active text-primary" : ""} link-underline-circle text-base font-medium text-white hover:text-primary`}
-            href="/contact"
+            className={`link ${pathname === "#contact" ? "active text-primary" : ""} link-underline-circle text-base font-medium text-white hover:text-primary`}
+            href="#contact"
           >
             Contact
           </Link>

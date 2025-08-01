@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 import Image from "next/image";
+import { LinkIcon } from "@heroicons/react/24/outline";
+
 
 type ProjectCardProps = {
   title: string;
@@ -25,7 +27,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <article
-      className={`mx-auto flex w-full flex-col justify-between gap-6 rounded-3xl border border-stroke-article bg-gradient-to-br from-bg-gradient-dark-start to-bg-gradient-dark-end px-4 py-6 sm:max-w-3xl md:px-6 md:py-10 xl:aspect-[600/618] xl:min-h-[618px] xl:max-w-[600px]${className}`}
+      className={`mx-auto flex w-full flex-col justify-between gap-6 rounded-3xl border bg-[url(/bg/bg-card.png)] bg-cover bg-left px-4 py-6 sm:max-w-3xl md:px-6 md:py-10 xl:aspect-[600/618] xl:min-h-[618px] xl:max-w-[600px]${className}`}
     >
       <div className="flex aspect-[370/218] h-[218px] w-full flex-col items-center justify-center overflow-hidden rounded-2xl bg-midnight bg-[url(/bg/bg-card.png)] bg-cover bg-center sm:aspect-[552/330] md:h-[330px] xl:max-w-[552px]">
         <Image
@@ -38,11 +40,11 @@ export default function ProjectCard({
       </div>
 
       <div className="flex flex-col gap-4 pt-[12px]">
-        <span className="text-sm font-semibold uppercase tracking-wide text-purple-300">
+        <span className="text-sm font-semibold uppercase tracking-wide text-base/70">
           {category}
         </span>
-        <h3 className="text-xl font-bold xl:text-3xl">{title}</h3>
-        <p className="font-regular text-sm text-mistyLavender xl:text-xl">
+        <h3 className="text-xl font-bold text-primary xl:text-3xl">{title}</h3>
+        <p className="font-regular text-sm text-primary xl:text-xl">
           {description}
         </p>
       </div>
@@ -53,7 +55,7 @@ export default function ProjectCard({
             {technologies.map((tech, index) => (
               <div
                 key={index}
-                className="flex h-[34px] w-[34px] items-center justify-center rounded-full border border-stroke-article bg-gradient-to-br from-bg-gradient-dark-start to-bg-gradient-dark-end xl:h-[50px] xl:w-[50px]"
+                className="flex h-[34px] w-[34px] items-center justify-center rounded-full border bg-base xl:h-[50px] xl:w-[50px]"
               >
                 {" "}
                 <Image
@@ -72,16 +74,18 @@ export default function ProjectCard({
         {liveDemo && (
           <div className="mr-[10px] flex items-center gap-2 sm:mr-[25px]">
             <Link href={liveDemo}>
-              <Image
+              {/* <Image
                 src="/icons/link.svg"
                 width={19}
                 height={19}
                 alt="Démo live"
-              />
+              /> */}
+              <LinkIcon className="h-5 w-5 text-base" />
+
             </Link>
             <Link
               href={liveDemo}
-              className="relative inline-block text-sm font-medium text-purple-300 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-purple-300 before:transition-all before:duration-300 hover:before:w-full xl:text-xl"
+              className="relative inline-block text-sm font-medium text-accent-dark before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-accent-dark before:transition-all before:duration-300 hover:before:w-full xl:text-xl"
             >
               Démo live
             </Link>
@@ -92,15 +96,15 @@ export default function ProjectCard({
           <div className="flex items-center gap-2">
             <Link href={sourceCode}>
               <Image
-                src="/icons/iconGithub.svg"
-                width={19}
-                height={19}
+                src="/icons/github-mark.svg"
+                width={22}
+                height={22}
                 alt="Voir le code"
               />
             </Link>
             <Link
               href={sourceCode}
-              className="relative inline-block text-sm font-medium text-purple-300 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-purple-300 before:transition-all before:duration-300 hover:before:w-full xl:text-xl"
+              className="relative inline-block text-sm font-medium text-accent-dark before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-accent-dark before:transition-all before:duration-300 hover:before:w-full xl:text-xl"
             >
               Voir le code
             </Link>
