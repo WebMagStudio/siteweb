@@ -25,7 +25,7 @@ export default function HeroBanner({ title, text, button }: HeroBannerProps) {
               href={button.href}
               text={button.text}
               iconLeft={button.iconLeft}
-              className="text-lg mb-10 transition-transform duration-300 ease-in-out group-hover:animate-float"
+              className="mb-10 text-lg transition-transform duration-300 ease-in-out group-hover:animate-float"
             />
           </div>
         )}

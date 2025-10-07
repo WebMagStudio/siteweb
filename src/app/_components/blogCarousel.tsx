@@ -3,10 +3,18 @@ import Image from "next/image";
 import { useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
+// import { BlogMeta } from '~/lib/blog';
 import BlogCard from "./blogCard";
-import { blogList } from "~/data/blogList";
+// import { blogList } from "~/data/blogList";
+import { getPosts } from "~/lib/posts";
 
-export default function BlogCarousel() {
+// type Props = {
+//   posts: BlogMeta[];
+// };
+
+export default async function BlogCarousel() {
+  const fileNames = await getPosts();
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {
@@ -16,7 +24,7 @@ export default function BlogCarousel() {
   };
 
   const nextSlide = () => {
-    if (currentIndex < blogList.length - 1) {
+    if (currentIndex < fileNames.length - 1) {
       setCurrentIndex(currentIndex + 1);
     }
   };
@@ -27,15 +35,9 @@ export default function BlogCarousel() {
       {currentIndex > 0 && (
         <button
           onClick={prevSlide}
-          className="absolute -left-[1px] top-1/2 z-10 -translate-y-1/2"
+          className="absolute -left-[6px] top-1/2 z-10 -translate-y-1/2"
         >
-          <Image
-            className="mr-2"
-            src="/icons/chevronleft.svg"
-            alt=""
-            width={19}
-            height={19}
-          />
+          <ChevronLeftIcon className="text-bold z-10 h-10 w-10 text-base" />
         </button>
       )}
 
@@ -47,27 +49,28 @@ export default function BlogCarousel() {
             transform: `translateX(-${currentIndex * 100}%)`,
           }}
         >
-          {blogList.map((blogCard) => (
+          {/* {blogList.map((blogCard) => (
             <div key={blogCard.id} className="w-full flex-shrink-0 md:w-1/2">
               <BlogCard {...blogCard} />
             </div>
+          ))} */}
+
+          {fileNames.map((filename) => (
+            <div key={filename}>{filename}</div>
+            // <div key={post.slug} className="w-full flex-shrink-0 md:w-1/2">
+            //   <BlogCard post={post} />
+            // </div>
           ))}
         </div>
       </div>
 
       {/* Flèche droite */}
-      {currentIndex < blogList.length - 1 && (
+      {currentIndex < fileNames.length - 1 && (
         <button
           onClick={nextSlide}
           className="absolute -right-2 top-1/2 z-10 -translate-y-1/2"
         >
-          <Image
-            className="mr-2"
-            src="/icons/chevronright.svg"
-            alt=""
-            width={19}
-            height={19}
-          />
+          <ChevronRightIcon className="text-bold z-10 h-10 w-10 text-base hover:text-black" />
         </button>
       )}
     </div>
