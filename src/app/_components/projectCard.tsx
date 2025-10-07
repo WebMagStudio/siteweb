@@ -3,7 +3,6 @@ import { ReactNode } from "react";
 import Image from "next/image";
 import { LinkIcon } from "@heroicons/react/24/outline";
 
-
 type ProjectCardProps = {
   title: string;
   description: ReactNode;
@@ -74,14 +73,7 @@ export default function ProjectCard({
         {liveDemo && (
           <div className="mr-[10px] flex items-center gap-2 sm:mr-[25px]">
             <Link href={liveDemo}>
-              {/* <Image
-                src="/icons/link.svg"
-                width={19}
-                height={19}
-                alt="Démo live"
-              /> */}
               <LinkIcon className="h-5 w-5 text-base" />
-
             </Link>
             <Link
               href={liveDemo}

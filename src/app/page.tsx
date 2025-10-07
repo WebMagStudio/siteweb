@@ -4,10 +4,15 @@ import HeadingBlock from "./_components/headingBlock";
 import ProjectsGrid from "./_components/projectsGrid";
 import CTABanner from "./_components/ctaBanner";
 import TestimonialsCarousel from "./_components/testimonialsCarousel";
-import BlogCarousel from "./_components/blogCarousel";
+// import BlogCarousel from "./_components/blogCarousel";
 import CVDownloadCard from "./_components/CVDownloadCard";
 import ContactForm from "./_components/contactForm";
 import CardInfo from "./_components/cardInfo";
+
+// import { getAllBlogPosts } from "~/lib/blog";
+
+import { getPosts } from "~/lib/posts";
+import Link from "next/link";
 
 import { MapPinIcon, PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 
@@ -15,6 +20,12 @@ export default async function Home() {
   const hello = await api.post.hello({ text: "from tRPC" });
 
   void api.post.getLatest.prefetch();
+
+  //  const posts = getAllBlogPosts();
+
+  // const fileNames = await getPosts();
+
+  const posts = await getPosts();
 
   return (
     <HydrateClient>
@@ -69,7 +80,7 @@ export default async function Home() {
               {/* Bento 1 */}
               <div className="shadow-xs group relative flex flex-col overflow-hidden rounded-lg bg-white ring-1 ring-black/5 max-lg:rounded-t-3xl lg:col-span-3 lg:rounded-tl-3xl">
                 <div className="relative shrink-0">
-                  <div className="h-96 bg-[url(/img/ouistitree.png)] bg-cover bg-top"></div>
+                  <div className="h-96 bg-[url(/img/mockup-ouistitree.png)] bg-contain bg-center bg-no-repeat"></div>
                 </div>
                 <div className="relative p-10">
                   <h3 className="font-mono text-xs/5 font-semibold uppercase tracking-widest text-base/70">
@@ -118,7 +129,7 @@ export default async function Home() {
                     Rédaction web et référencement
                   </h3>
                   <p className="mt-1 text-2xl/8 font-medium tracking-tight text-primary">
-                    Des contenus qui parlent à vos clients et aux moteurs de
+                    Des contenus qui parlent à vos clients... et aux moteurs de
                     recherche
                   </p>
                   <p className="mt-2 max-w-[600px] text-sm/6 text-primary">
@@ -155,29 +166,29 @@ export default async function Home() {
                   {/* Cercle d'icônes en fond */}
                   <div className="flex flex-wrap items-center justify-center gap-6 p-4">
                     {/* Facebook */}
-                    <div className="flex size-16 items-center justify-center rounded-full border border-gray-300 bg-white shadow transition hover:scale-105">
+                    <div className="flex size-20 items-center justify-center rounded-full border border-gray-300 bg-white shadow transition hover:scale-105">
                       <img
                         src="/icons/facebook.svg"
                         alt="Facebook"
-                        className="h-10 w-10"
+                        className="h-14 w-14"
                       />
                     </div>
 
                     {/* Instagram */}
-                    <div className="flex size-16 items-center justify-center rounded-full border border-gray-300 bg-white shadow transition hover:scale-105">
+                    <div className="flex size-20 items-center justify-center rounded-full border border-gray-300 bg-white shadow transition hover:scale-105">
                       <img
                         src="/icons/instagram.svg"
                         alt="Instagram"
-                        className="h-10 w-10"
+                        className="h-14 w-14"
                       />
                     </div>
 
                     {/* LinkedIn */}
-                    <div className="flex size-16 items-center justify-center rounded-full border border-gray-300 bg-white shadow transition hover:scale-105">
+                    <div className="flex size-20 items-center justify-center rounded-full border border-gray-300 bg-white shadow transition hover:scale-105">
                       <img
                         src="/icons/linkedin.svg"
                         alt="LinkedIn"
-                        className="h-14 w-14"
+                        className="h-20 w-20"
                       />
                     </div>
                   </div>
@@ -248,8 +259,38 @@ export default async function Home() {
               }
             />
 
-            <div className="mt-8">
-              <BlogCarousel />
+            <div className="mt-8 gap-6">
+              <div className="flex-cols flex gap-6">
+                {posts.map((post) => (
+                  <div
+                    key={post.slug}
+                    className="rounded-xl bg-primary p-4 text-white"
+                  >
+                    <header>
+                      {new Date(post.publishedAt).toLocaleDateString()}
+                    </header>
+                    <h1 className="text-2xl font-bold">{post.title}</h1>
+                    <p className="text-md">{post.description}</p>
+                    <footer>
+                      <Link
+                        className="text-indigo-600"
+                        href={`/posts/${post.slug}`}
+                      >
+                        Lire plus
+                      </Link>
+                    </footer>
+                  </div>
+                ))}
+              </div>
+
+              {/* <BlogCarousel /> */}
+              {/* <BlogCarousel /> */}
+              {/* {fileNames.map((filename) => (
+                <div key={filename.slug}>{filename.title}</div> */}
+              {/* // <div key={post.slug} className="w-full flex-shrink-0 md:w-1/2">
+                //   <BlogCard post={post} />
+                // </div> */}
+              {/* ))} */}
             </div>
           </div>
         </section>
@@ -268,19 +309,24 @@ export default async function Home() {
             <CVDownloadCard />
             <p className="mx-10 my-12 max-w-5xl">
               C’est le moment des présentations 🙂 ! <br />
-              Je suis Marine Magnin, développeuse front-end. <br />
-              Ce que j’aime dans mon métier ? Transformer des idées en sites
-              clairs, efficaces et agréables à utiliser. Issue d’une formation
-              full-stack, j’ai choisi de me concentrer sur le front pour allier
-              sens du détail, créativité et souci de l’expérience utilisateur.
-              Mon objectif : créer des sites sur mesure qui font vraiment la
-              différence pour mes clients.
+              Je crée des sites web et des solutions digitales qui font vraiment
+              la différence pour les indépendants, les artisans et les petites
+              structures. <br />
+              Pas besoin de jargon technique : je prends le temps de comprendre
+              votre métier, vos priorités et vos clients. <br /> Ensemble, on
+              avance pas à pas vers un outil clair, moderne, efficace — et qui
+              vous ressemble. <br />
+              <br /> Mon objectif ? Que vous soyez fière de votre présence en
+              ligne, et qu’elle vous serve vraiment au quotidien.
             </p>
           </div>
         </section>
 
         <div className="mb-12 w-full">
-          <section id="consultation" className="mx-3 rounded-3xl bg-gradient-to-r from-accent-light via-accent to-accent-dark py-12 text-white">
+          <section
+            id="consultation"
+            className="mx-3 rounded-3xl bg-gradient-to-r from-accent-light via-accent to-accent-dark py-12 text-white"
+          >
             <CTABanner
               className="text-white"
               title={
@@ -303,7 +349,10 @@ export default async function Home() {
           </section>
         </div>
 
-        <section id="contact" className="mt-3 w-full bg-gradient-to-r from-accent-light via-accent to-accent-dark py-3">
+        <section
+          id="contact"
+          className="mt-3 w-full bg-gradient-to-r from-accent-light via-accent to-accent-dark py-3"
+        >
           <div className="mx-3 rounded-3xl bg-white/60 px-4 py-12">
             <div className="mx-auto max-w-[1240px]">
               <HeadingBlock
@@ -348,7 +397,7 @@ export default async function Home() {
                   />
                   <CardInfo
                     icon={<EnvelopeIcon className="h-8 w-8" />}
-                    content="marine.magnin73@gmail.com"
+                    content="m.magnin73110@gmail.com"
                     className="flex-1"
                   />
                 </div>

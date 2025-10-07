@@ -9,14 +9,14 @@ export default {
       fontFamily: {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
       },
-       keyframes: {
+      keyframes: {
         float: {
-          '0%, 100%': { transform: 'translateY(-0.35rem)' },
-          '50%': { transform: 'translateY(0)' },
+          "0%, 100%": { transform: "translateY(-0.35rem)" },
+          "50%": { transform: "translateY(0)" },
         },
       },
       animation: {
-        float: 'float 1.5s ease-in-out infinite',
+        float: "float 1.5s ease-in-out infinite",
       },
       colors: {
         // colorPurple300: "#CBACF9", //
