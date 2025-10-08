@@ -13,6 +13,7 @@ import CardInfo from "./_components/cardInfo";
 
 import { getPosts } from "~/lib/posts";
 import Link from "next/link";
+import Image from "next/image";
 
 import { MapPinIcon, PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 
@@ -269,12 +270,19 @@ export default async function Home() {
                     <header>
                       {new Date(post.publishedAt).toLocaleDateString()}
                     </header>
+                    <Image
+                      className="rounded-lg"
+                      src={post.image}
+                      width={500}
+                      height={500}
+                      alt={post.image}
+                    />
                     <h1 className="text-2xl font-bold">{post.title}</h1>
                     <p className="text-md">{post.description}</p>
                     <footer>
                       <Link
                         className="text-indigo-600"
-                        href={`/posts/${post.slug}`}
+                        href={`/blog/${post.slug}`}
                       >
                         Lire plus
                       </Link>

@@ -24,7 +24,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr" className={inter.className}>
-      <body className="">
+      <body>
         <Header />
         <TRPCReactProvider>{children}</TRPCReactProvider>
         <Footer />

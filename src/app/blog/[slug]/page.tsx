@@ -76,12 +76,14 @@ export default async function RoutePage(
   }
 
   return (
-    <div>
-      <p>{new Date(post.publishedAt).toLocaleDateString()}</p>
-      <h1>{post.title}</h1>
-      <Mdx>{post.content}</Mdx>
-      {/* ou <Mdx source={post.content} /> selon ton composant */}
-    </div>
+    <main className="mx-3 my-12 flex flex-col items-center justify-center">
+      <section className="mx-6 my-12">
+        <p>{new Date(post.publishedAt).toLocaleDateString()}</p>
+        <h1 className="text-3xl font-bold sm:text-5xl text-primary">{post.title}</h1>
+        <Mdx>{post.content}</Mdx>
+        {/* ou <Mdx source={post.content} /> selon ton composant */}
+      </section>
+    </main>
   );
 }
 

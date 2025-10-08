@@ -8,6 +8,9 @@ const postsDirectory = path.join(process.cwd(), "content", "blog"); // on récup
 const PostSchema = z.object({
   title: z.string().min(15).max(65),
   description: z.string(),
+  author: z.string(),
+  category: z.string(),
+  image: z.string(),
   publishedAt: z.coerce.string(),
   published: z.boolean().optional().default(false),
 });
@@ -44,7 +47,7 @@ export const getPosts = async () => {
 
     posts.push({
       ...safeData.data,
-      slug: fileName.replace(".mdx", ""),
+      slug: fileName.replace(/^\d+-/, "").replace(".mdx", ""),
       content: frontmatter.content,
     });
   }
