@@ -4,16 +4,9 @@ import HeadingBlock from "./_components/headingBlock";
 import ProjectsGrid from "./_components/projectsGrid";
 import CTABanner from "./_components/ctaBanner";
 import TestimonialsCarousel from "./_components/testimonialsCarousel";
-// import BlogCarousel from "./_components/blogCarousel";
 import CVDownloadCard from "./_components/CVDownloadCard";
 import ContactForm from "./_components/contactForm";
 import CardInfo from "./_components/cardInfo";
-
-// import { getAllBlogPosts } from "~/lib/blog";
-
-import { getPosts } from "~/lib/posts";
-import Link from "next/link";
-import Image from "next/image";
 
 import { MapPinIcon, PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 
@@ -21,12 +14,6 @@ export default async function Home() {
   const hello = await api.post.hello({ text: "from tRPC" });
 
   void api.post.getLatest.prefetch();
-
-  //  const posts = getAllBlogPosts();
-
-  // const fileNames = await getPosts();
-
-  const posts = await getPosts();
 
   return (
     <HydrateClient>
@@ -260,46 +247,6 @@ export default async function Home() {
               }
             />
 
-            <div className="mt-8 gap-6">
-              <div className="flex-cols flex gap-6">
-                {posts.map((post) => (
-                  <div
-                    key={post.slug}
-                    className="rounded-xl bg-primary p-4 text-white"
-                  >
-                    <header>
-                      {new Date(post.publishedAt).toLocaleDateString()}
-                    </header>
-                    <Image
-                      className="rounded-lg"
-                      src={post.image}
-                      width={500}
-                      height={500}
-                      alt={post.image}
-                    />
-                    <h1 className="text-2xl font-bold">{post.title}</h1>
-                    <p className="text-md">{post.description}</p>
-                    <footer>
-                      <Link
-                        className="text-indigo-600"
-                        href={`/blog/${post.slug}`}
-                      >
-                        Lire plus
-                      </Link>
-                    </footer>
-                  </div>
-                ))}
-              </div>
-
-              {/* <BlogCarousel /> */}
-              {/* <BlogCarousel /> */}
-              {/* {fileNames.map((filename) => (
-                <div key={filename.slug}>{filename.title}</div> */}
-              {/* // <div key={post.slug} className="w-full flex-shrink-0 md:w-1/2">
-                //   <BlogCard post={post} />
-                // </div> */}
-              {/* ))} */}
-            </div>
           </div>
         </section>
 
