@@ -19,7 +19,7 @@ export default function CVDownloadCard() {
           text="Télécharger mon CV"
           href="/doc/CV Marine Magnin.pdf"
           iconLeft={
-            <Image src="/icons/download.svg" width={12} height={12} alt="" />
+            <img src="/icons/download.svg" width={12} height={12} alt="" />
           }
           className="!rounded-lg !p-4 text-sm"
         />

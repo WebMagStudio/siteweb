@@ -7,8 +7,18 @@ import { useEffect } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
+import { Comfortaa } from "next/font/google";
+
 import Logo from "./logo";
 import SocialIconLink from "./socialIconLink";
+
+import Image from "next/image";
+
+const comfortaa = Comfortaa({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: "swap",
+});
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -40,18 +50,25 @@ export default function Header() {
       >
         {/* Logo */}
         <div className="flex lg:flex-1">
-          <a
-            href="/"
-            className="rounded-xl bg-bg-light-menu from-bg-gradient-dark-start to-bg-gradient-dark-end p-1.5 sm:-m-1.5 dark:border dark:border-indigo-400-16 dark:bg-gradient-to-br"
-          >
-            <span className="sr-only">M&M</span>
-            <Logo
-              src="/logo.png"
-              width={73}
-              height={66}
-              alt="Logo Marine Magnin"
-            />
-          </a>
+          <div className="flex items-center gap-6">
+            <a
+              href="/"
+            >
+              <span className="sr-only">WebMagStudio</span>
+              <div className="relative w-[120px] h-[120px] rounded-xl bg-white p-2 ">
+                <Image
+                  src="/logo4.png"
+                  alt="Logo Marine Magnin"
+                  fill
+                  sizes="max-width: 120px"
+                  className="object-contain p-2"
+                />
+              </div>
+            </a>
+            {/* <a href="/" className={`${comfortaa.className} font-bold text-primary`}>
+              WebMagStudio
+            </a> */}
+          </div>
         </div>
 
         {/* Mobile menu button */}
@@ -76,7 +93,7 @@ export default function Header() {
             href="#services"
             onClick={() => setActiveHash("services")}
           >
-            Nos services
+            Services
           </Link>
 
           <Link
@@ -93,14 +110,6 @@ export default function Header() {
             onClick={() => setActiveHash("apropos")}
           >
             À propos
-          </Link>
-
-          <Link
-            className={`link ${activeHash === "blog" ? "active text-primary" : "text-white"} link-underline-circle text-whitet text-base font-medium hover:text-primary`}
-            href="#blog"
-            onClick={() => setActiveHash("blog")}
-          >
-            Blog
           </Link>
 
           <Link
@@ -154,15 +163,25 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <Link
               href="/"
-              className="-m-1.5 rounded-xl bg-white from-bg-gradient-dark-start to-bg-gradient-dark-end p-1.5"
+              className="-m-1.5 rounded-xl bg-white p-1.5"
             >
-              <span className="sr-only">M&M</span>
+              {/* <span className="sr-only">M&M</span>
               <Logo
-                src="/logo.png"
+                src="/logo4.png"
                 width={73}
                 height={66}
                 alt="Logo Marine Magnin"
-              />
+              /> */}
+              <span className="sr-only">WebMagStudio</span>
+              <div className="relative w-[73px] h-[73px]">
+                <Image
+                  src="/logo4.png"
+                  alt="Logo Marine Magnin"
+                  fill
+                  sizes="max-width: 73px"
+                  className="object-contain"
+                />
+              </div>
             </Link>
             <button
               type="button"
@@ -182,7 +201,7 @@ export default function Header() {
                   href="#services"
                   onClick={() => setActiveHash("services")}
                 >
-                  Nos services
+                  Services
                 </Link>
 
                 <Link
@@ -194,19 +213,11 @@ export default function Header() {
                 </Link>
 
                 <Link
-                  className={`link ${activeHash === "apropos" ? "active bg-primary text-white" : "text-primary"} hover:bg-primarye -mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium hover:text-white`}
+                  className={`link ${activeHash === "apropos" ? "active bg-primary text-white" : "text-primary"} hover:bg-primary -mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium hover:text-white`}
                   href="#apropos"
                   onClick={() => setActiveHash("apropos")}
                 >
                   À propos
-                </Link>
-
-                <Link
-                  className={`link ${activeHash === "blog" ? "active bg-primary text-white" : "text-primary"} -mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium hover:bg-primary hover:text-white`}
-                  href="#blog"
-                  onClick={() => setActiveHash("blog")}
-                >
-                  Blog
                 </Link>
 
                 <Link
@@ -247,8 +258,6 @@ export default function Header() {
               </div>
             </div>
           </div>
-          {/* </div>
-          </div> */}
         </DialogPanel>
       </Dialog>
     </header>

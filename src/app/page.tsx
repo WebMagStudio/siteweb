@@ -50,7 +50,7 @@ export default async function Home() {
           </section>
         </div>
         <section id="services" className="my-12 w-full rounded-xl bg-white">
-          <div className="mx-auto max-w-[1240px] px-4 py-16">
+          <div className="mx-auto max-w-[1240px] px-4 sm:px-8 py-16">
             <HeadingBlock
               className="text-primary"
               preTitle="Des services sur mesure"
@@ -64,10 +64,10 @@ export default async function Home() {
               }
             />
 
-            <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
+            <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
               {/* Bento 1 */}
               <div className="shadow-xs group relative flex flex-col overflow-hidden rounded-lg bg-white ring-1 ring-black/5 max-lg:rounded-t-3xl lg:col-span-3 lg:rounded-tl-3xl">
-                <div className="relative shrink-0">
+                <div className="relative shrink-0 h-96">
                   <div className="h-96 bg-[url(/img/mockup-ouistitree.png)] bg-contain bg-center bg-no-repeat"></div>
                 </div>
                 <div className="relative p-10">
@@ -78,11 +78,11 @@ export default async function Home() {
                   <p className="mt-1 text-2xl/8 font-medium tracking-tight text-primary">
                     Montrez votre valeur au premier coup d’œil
                   </p>
-                  <p className="mt-2 max-w-[600px] text-sm/6 text-primary">
+                  <p className="mt-2 max-w-[600px] sm:max-w-full text-sm/6 text-primary">
                     Vous n’avez pas encore de site ou le vôtre ne vous
-                    correspond plus ? <br />
+                    correspond plus ?
                     Je construis pas à pas un site moderne, rapide et simple à
-                    utiliser. <br /> Un site pensé pour vos clients… et conçu
+                    utiliser. Un site pensé pour vos clients, conçu
                     avec vous.
                   </p>
                 </div>
@@ -100,9 +100,8 @@ export default async function Home() {
                   <p className="mt-1 text-2xl/8 font-medium tracking-tight text-primary">
                     Une application web taillée pour vos usages
                   </p>
-                  <p className="mt-2 max-w-[600px] text-sm/6 text-primary">
-                    Une application web pensée pour vos outils internes, votre
-                    métier ou vos clients.
+                  <p className="mt-2 max-w-[600px] sm:max-w-full text-sm/6 text-primary">
+                    Une application web pensée pour vos clients, votre métier et vos outils internes.
                   </p>
                 </div>
               </div>
@@ -120,7 +119,7 @@ export default async function Home() {
                     Des contenus qui parlent à vos clients... et aux moteurs de
                     recherche
                   </p>
-                  <p className="mt-2 max-w-[600px] text-sm/6 text-primary">
+                  <p className="mt-2 max-w-[600px] sm:max-w-full text-sm/6 text-primary">
                     Le bon ton, les bons mots, au bon endroit. Je prends le
                     temps de comprendre votre activité et votre ton, pour écrire
                     des textes clairs, engageants, et bien référencés.
@@ -140,7 +139,7 @@ export default async function Home() {
                   <p className="mt-1 text-2xl/8 font-medium tracking-tight text-primary">
                     Restez concentré sur votre métier
                   </p>
-                  <p className="mt-2 max-w-[600px] text-sm/6 text-primary">
+                  <p className="mt-2 max-w-[600px] sm:max-w-full text-sm/6 text-primary">
                     Un site ou une application, ça nécessite une attention
                     régulière. Pour vous, je m’occupe : des sauvegardes, des
                     mises à jour, de l'hébergement et de la sécurité.
@@ -153,12 +152,13 @@ export default async function Home() {
                 <div className="flex h-80 items-center justify-center bg-[url(/bg/bg-card.png)] bg-cover bg-left">
                   {/* Cercle d'icônes en fond */}
                   <div className="flex flex-wrap items-center justify-center gap-6 p-4">
-                    {/* Facebook */}
+
+                    {/* LinkedIn */}
                     <div className="flex size-20 items-center justify-center rounded-full border border-gray-300 bg-white shadow transition hover:scale-105">
                       <img
-                        src="/icons/facebook.svg"
-                        alt="Facebook"
-                        className="h-14 w-14"
+                        src="/icons/linkedin.svg"
+                        alt="LinkedIn"
+                        className="h-20 w-20"
                       />
                     </div>
 
@@ -171,12 +171,12 @@ export default async function Home() {
                       />
                     </div>
 
-                    {/* LinkedIn */}
+                    {/* Facebook */}
                     <div className="flex size-20 items-center justify-center rounded-full border border-gray-300 bg-white shadow transition hover:scale-105">
                       <img
-                        src="/icons/linkedin.svg"
-                        alt="LinkedIn"
-                        className="h-20 w-20"
+                        src="/icons/facebook.svg"
+                        alt="Facebook"
+                        className="h-14 w-14"
                       />
                     </div>
                   </div>
@@ -188,9 +188,9 @@ export default async function Home() {
                   <p className="mt-1 text-2xl/8 font-medium tracking-tight text-primary">
                     Bien communiquer sur les réseaux sociaux
                   </p>
-                  <p className="mt-2 max-w-[600px] text-sm/6 text-primary">
-                    LinkedIn, Instagram, Facebook : je vous aide à structurer
-                    votre présence en ligne, à trouver le bon ton et à publier
+                  <p className="mt-2 max-w-[600px] sm:max-w-full text-sm/6 text-primary">
+                    LinkedIn, Instagram, Facebook : je vous accompagne pour structurer
+                    votre présence en ligne, pour trouver le bon ton, et, pour publier
                     avec régularité.
                   </p>
                 </div>
@@ -207,7 +207,7 @@ export default async function Home() {
               title={
                 <>
                   Focus sur{" "}
-                  <span className="text-accent-dark">nos réalisations</span>
+                  <span className="text-accent-dark">mes réalisations</span>
                 </>
               }
             />
@@ -235,7 +235,7 @@ export default async function Home() {
           </section>
         </div>
 
-        <section id="blog" className="my-12 w-full">
+        {/* <section id="blog" className="my-12 w-full">
           <div className="mx-auto max-w-[1240px] px-4 py-16">
             <HeadingBlock
               className="text-primary"
@@ -248,7 +248,7 @@ export default async function Home() {
             />
 
           </div>
-        </section>
+        </section> */}
 
         <section id="apropos" className="my-12 w-full">
           <div className="mx-auto max-w-[1240px] px-4 py-16">
@@ -294,12 +294,12 @@ export default async function Home() {
                 <>
                   N'attendez plus pour booster votre visibilité en ligne !{" "}
                   <br />
-                  Contactez-moi dès maintenant et ensemble, donnons vie à vos
+                  Prenez rendez-vous dès maintenant et ensemble, donnons vie à vos
                   idées.
                 </>
               }
-              href="#"
-              text="Je réserve ma consultation gratuite"
+              href="/calendly"
+              text="Je réserve ma consultation gratuite de 30 min"
             />
           </section>
         </div>
@@ -322,83 +322,36 @@ export default async function Home() {
               <p className="mb-12 text-center">
                 {
                   <>
-                    Je suis ravie que vous ayez pris le temps de visiter mon
-                    portfolio !<br />
-                    Vous pouvez me joindre en utilisant le formulaire de contact
-                    ci-dessous. <br />
-                    Je suis impatiente d’échanger avec vous !
+                    Pour toute question ou collaboration,
+                    vous pouvez me joindre directement par téléphone ou par email.
+                    <br /> Je serais ravie d’échanger avec vous !
                   </>
                 }
               </p>
-              {/* <div className="flex flex-col items-center justify-center gap-8 lg:flex-row lg:items-start">
-                <div className="flex w-full h-full max-w-[600px] flex-col justify-between gap-6"> */}
-
-              <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-stretch">
-                <div className="mx-auto flex w-full max-w-[600px] flex-col justify-between gap-6 lg:max-w-none">
+              <div className="grid grid-cols-1 gap-8">
+                <div className="mx-auto flex w-full max-w-[600px] flex-col justify-between gap-6">
                   <CardInfo
                     icon={<MapPinIcon className="h-8 w-8" />}
                     content={
                       <>
                         Savoie, Isère, Haute-Savoie, Rhône <br /> + <br />{" "}
-                        Télétravail
+                        En distanciel
                       </>
                     }
-                    className="flex-1"
                   />
                   <CardInfo
                     icon={<PhoneIcon className="h-8 w-8" />}
                     content="06.70.45.59.84"
-                    className="flex-1"
                   />
                   <CardInfo
                     icon={<EnvelopeIcon className="h-8 w-8" />}
-                    content="m.magnin73110@gmail.com"
-                    className="flex-1"
+                    content="contact@webmagstudio.fr"
                   />
-                </div>
-
-                {/* <div className="w-full max-w-[600px] flex-1 h-full"> */}
-                <div className="flex items-stretch">
-                  <ContactForm />
                 </div>
               </div>
             </div>
           </div>
         </section>
-
-        {/* <CTAButton href="/contact" text="Lancez votre projet" /> */}
-        {/* <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-            <Link
-              className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 hover:bg-white/20"
-              href="https://create.t3.gg/en/usage/first-steps"
-              target="_blank"
-            >
-              <h3 className="text-2xl font-bold">First Steps →</h3>
-              <div className="text-lg">
-                Just the basics - Everything you need to know to set up your
-                database and authentication.
-              </div>
-            </Link>
-            <Link
-              className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 hover:bg-white/20"
-              href="https://create.t3.gg/en/introduction"
-              target="_blank"
-            >
-              <h3 className="text-2xl font-bold">Documentation →</h3>
-              <div className="text-lg">
-                Learn more about Create T3 App, the libraries it uses, and how
-                to deploy it.
-              </div>
-            </Link>
-          </div>
-          <div className="flex flex-col items-center gap-2">
-            <p className="text-2xl text-white">
-              {hello ? hello.greeting : "Loading tRPC query..."}
-            </p>
-          </div> */}
-
-        {/* <LatestPost /> */}
-        {/* </div> */}
       </main>
     </HydrateClient>
   );

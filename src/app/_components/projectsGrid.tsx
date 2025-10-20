@@ -13,20 +13,20 @@ export default function ProjectsGrid() {
 
   const isAllVisible = selectedCategory
     ? visibleCount >=
-      projectsList.filter((project) =>
-        Array.isArray(project.category)
-          ? project.category.includes(selectedCategory)
-          : project.category === selectedCategory,
-      ).length
+    projectsList.filter((project) =>
+      Array.isArray(project.category)
+        ? project.category.includes(selectedCategory)
+        : project.category === selectedCategory,
+    ).length
     : visibleCount >= projectsList.length;
 
   // Filtrage des projets
   const filteredProjects = selectedCategory
     ? projectsList.filter((project) =>
-        Array.isArray(project.category)
-          ? project.category.includes(selectedCategory)
-          : project.category === selectedCategory,
-      )
+      Array.isArray(project.category)
+        ? project.category.includes(selectedCategory)
+        : project.category === selectedCategory,
+    )
     : projectsList;
 
   // Remet le compteur à 4 quand on change de filtre
@@ -55,7 +55,7 @@ export default function ProjectsGrid() {
 
   return (
     <div>
-      <div className="mx-auto my-8 flex w-full flex-wrap gap-4 sm:max-w-3xl md:gap-6 lg:mx-0">
+      <div className="mx-auto my-8 flex w-full flex-wrap gap-4 sm:max-w-3xl md:gap-6 lg:mx-0 lg:max-w-none">
         <FilterButton
           text="Tous"
           isActive={selectedCategory === null}
@@ -91,7 +91,7 @@ export default function ProjectsGrid() {
             onClick={handleClick}
             className="flex gap-2 rounded-lg border bg-gradient-to-r from-accent-light via-accent to-accent-dark p-4 text-sm font-medium text-white transition duration-200 hover:shadow-md"
           >
-            <Image src="/icons/addmore.svg" width={19} height={19} alt="" />
+            <img src="/icons/addmore.svg" width={19} height={19} alt="" />
             Afficher plus
           </button>
         )}

@@ -43,7 +43,7 @@ export default {
         "violet-500": "#A733FF",
         "violet-300": "#D297FF",
         "navy-950": "#000319",
-        "bg-light": "#E4ECFF",
+        "bg-light": "#e4ecffff",
         "indigo-100": "#E4ECFF",
         "slate-200": "#C1C2D3",
         "bg-gradient-dark-start": "#04071D",
