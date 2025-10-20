@@ -55,12 +55,21 @@ export default function Header() {
               href="/"
             >
               <span className="sr-only">WebMagStudio</span>
-              <div className="relative w-[120px] h-[120px] rounded-xl bg-white p-2 ">
+              {/* <div className="relative w-[120px] h-[120px] rounded-xl bg-white p-2 ">
                 <Image
                   src="/logo4.png"
                   alt="Logo Marine Magnin"
                   fill
                   sizes="max-width: 120px"
+                  className="object-contain p-2"
+                />
+              </div> */}
+              <div className="relative w-[124px] h-[120px] rounded-xl bg-white p-2 ">
+                <Image
+                  src="/logo3(2).png"
+                  alt="Logo Marine Magnin"
+                  fill
+                  sizes="max-width: 124px"
                   className="object-contain p-2"
                 />
               </div>
@@ -173,12 +182,21 @@ export default function Header() {
                 alt="Logo Marine Magnin"
               /> */}
               <span className="sr-only">WebMagStudio</span>
-              <div className="relative w-[73px] h-[73px]">
+              {/* <div className="relative w-[73px] h-[73px]">
                 <Image
                   src="/logo4.png"
                   alt="Logo Marine Magnin"
                   fill
                   sizes="max-width: 73px"
+                  className="object-contain"
+                />
+              </div> */}
+              <div className="relative w-[75px] h-[75px]">
+                <Image
+                  src="/logo3(2).png"
+                  alt="Logo Marine Magnin"
+                  fill
+                  sizes="max-width: 75px"
                   className="object-contain"
                 />
               </div>
