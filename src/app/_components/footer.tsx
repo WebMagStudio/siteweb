@@ -9,8 +9,8 @@ export default function Footer() {
           <p className="text-center md:text-left">
             Copyright ©2025 Marine Magnin. Tous droits réservés.
           </p>
-          <Link href="#">Mentions légales</Link>
-          <Link href="#">Politique de confidentialité</Link>
+          <Link href="/mentions-legales" className="underline">Mentions légales</Link>
+          <Link href="/politique-confidentialite" className="underline">Politique de confidentialité</Link>
         </div>
         <div className="flex items-start justify-center py-6 md:items-center md:py-0">
           <a
