@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SocialIconLink from "./socialIconLink";
+import { EnvelopeIcon } from "@heroicons/react/24/solid";
 
 export default function Footer() {
   return (
@@ -11,10 +12,14 @@ export default function Footer() {
           </p>
           <Link href="/mentions-legales" className="underline">Mentions légales</Link>
           <Link href="/politique-confidentialite" className="underline">Politique de confidentialité</Link>
+          <div className="flex items-center mt-1 gap-1">
+            <EnvelopeIcon className="h-4 w-4" />
+            <p>contact@webmagstudio.fr</p>
+          </div>
         </div>
         <div className="flex items-start justify-center py-6 md:items-center md:py-0">
           <a
-            href="https://github.com/Magma73"
+            href="https://github.com/WebMagStudio"
             className="ml-6 mr-4 flex size-12 items-center justify-center rounded-xl border border-white bg-gradient-to-r from-accent to-accent-dark p-1.5 hover:shadow-xl"
           >
             <span className="sr-only">Github</span>

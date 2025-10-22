@@ -133,7 +133,7 @@ export default function Header() {
         {/* Social links */}
         <div className="hidden items-center gap-2 lg:flex lg:flex-1 lg:justify-end">
           <a
-            href="https://github.com/Magma73"
+            href="https://github.com/WebMagStudio"
             className="ml-6 mr-4 flex size-12 items-center justify-center rounded-xl border border-white bg-gradient-to-r from-accent to-accent-dark p-1.5 hover:shadow-xl"
           >
             <span className="sr-only">Github</span>
@@ -248,7 +248,7 @@ export default function Header() {
 
                 <div className="flex justify-start gap-2">
                   <a
-                    href="https://github.com/Magma73"
+                    href="https://github.com/WebMagStudio"
                     className="flex size-12 items-center justify-center rounded-xl border border-white bg-gradient-to-r from-accent to-accent-dark p-1.5 hover:shadow-xl"
                   >
                     <span className="sr-only">Github</span>

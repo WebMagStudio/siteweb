@@ -264,15 +264,14 @@ export default async function Home() {
             <CVDownloadCard />
             <p className="mx-10 my-12 max-w-5xl">
               C’est le moment des présentations 🙂 ! <br />
-              Je crée des sites web et des solutions digitales qui font vraiment
-              la différence pour les indépendants, les artisans et les petites
+              Je m'appelle Marine Magnin, et, je crée des sites web et des solutions digitales pour les indépendants, les artisans et les petites
               structures. <br />
               Pas besoin de jargon technique : je prends le temps de comprendre
               votre métier, vos priorités et vos clients. <br /> Ensemble, on
               avance pas à pas vers un outil clair, moderne, efficace — et qui
               vous ressemble. <br />
               <br /> Mon objectif ? Que vous soyez fière de votre présence en
-              ligne, et qu’elle vous serve vraiment au quotidien.
+              ligne, qu'elle fasse vraiment une différence pour vous, et qu’elle soit utile au quotidien.
             </p>
           </div>
         </section>
@@ -280,7 +279,7 @@ export default async function Home() {
         <div className="mb-12 w-full">
           <section
             id="consultation"
-            className="mx-3 rounded-3xl bg-gradient-to-r from-accent-light via-accent to-accent-dark py-12 text-white"
+            className="mx-3 mb-12 rounded-3xl bg-gradient-to-r from-accent-light via-accent to-accent-dark py-12 text-white"
           >
             <CTABanner
               className="text-white"
@@ -299,12 +298,12 @@ export default async function Home() {
                 </>
               }
               href="/calendly"
-              text="Je réserve ma consultation gratuite de 30 min"
+              text="Prendre rendez-vous"
             />
           </section>
         </div>
 
-        <section
+        {/* <section
           id="contact"
           className="mt-3 w-full bg-gradient-to-r from-accent-light via-accent to-accent-dark py-3"
         >
@@ -323,11 +322,17 @@ export default async function Home() {
                 {
                   <>
                     Pour toute question ou collaboration,
-                    vous pouvez me joindre directement par téléphone ou par email.
+                    vous pouvez me joindre directement par email.
                     <br /> Je serais ravie d’échanger avec vous !
                   </>
                 }
               </p>
+              <div>
+                <div className="mt-1 text-2xl text-primary">
+                  <EnvelopeIcon className="h-8 w-8" />
+                  <p>contact@webmagstudio.fr</p>
+                  </div>
+              </div>
               <div className="grid grid-cols-1 gap-8">
                 <div className="mx-auto flex w-full max-w-[600px] flex-col justify-between gap-6">
                   <CardInfo
@@ -351,7 +356,7 @@ export default async function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
     </HydrateClient>
   );
