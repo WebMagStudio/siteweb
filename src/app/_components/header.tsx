@@ -7,10 +7,9 @@ import { useEffect } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-import { Comfortaa } from "next/font/google";
-
-import Logo from "./logo";
 import SocialIconLink from "./socialIconLink";
+
+import { Comfortaa } from "next/font/google";
 
 import Image from "next/image";
 
@@ -51,19 +50,11 @@ export default function Header() {
         {/* Logo */}
         <div className="flex lg:flex-1">
           <div className="flex items-center gap-6">
-            <a
+            <Link
               href="/"
             >
               <span className="sr-only">WebMagStudio</span>
-              {/* <div className="relative w-[120px] h-[120px] rounded-xl bg-white p-2 ">
-                <Image
-                  src="/logo4.png"
-                  alt="Logo Marine Magnin"
-                  fill
-                  sizes="max-width: 120px"
-                  className="object-contain p-2"
-                />
-              </div> */}
+
               <div className="relative w-[124px] h-[120px] rounded-xl bg-white p-2 ">
                 <Image
                   src="/logo3(2).png"
@@ -73,10 +64,10 @@ export default function Header() {
                   className="object-contain p-2"
                 />
               </div>
-            </a>
-            {/* <a href="/" className={`${comfortaa.className} font-bold text-primary`}>
+            </Link>
+            {/* <Link href="/" className={`${comfortaa.className} font-bold text-primary`}>
               WebMagStudio
-            </a> */}
+            </Link> */}
           </div>
         </div>
 
@@ -98,33 +89,33 @@ export default function Header() {
         {/* Desktop navigation */}
         <div className="hidden px-12 py-6 lg:flex lg:gap-x-8 xl:gap-x-12">
           <Link
-            className={`link ${activeHash === "services" ? "active link-underline-circle text-primary" : "text-white"} link-underline-circle text-base font-medium hover:text-primary`}
-            href="#services"
-            onClick={() => setActiveHash("services")}
+            className={`link ${activeHash === "#services" ? "active link-underline-circle text-primary" : "text-white"} link-underline-circle text-base font-medium hover:text-primary`}
+            href="/#services"
+            onClick={() => setActiveHash("#services")}
           >
             Services
           </Link>
 
           <Link
-            className={`link ${activeHash === "realisations" ? "active text-primary" : "text-white"} link-underline-circle text-base font-medium hover:text-primary`}
-            href="#realisations"
-            onClick={() => setActiveHash("realisations")}
+            className={`link ${activeHash === "#realisations" ? "active text-primary" : "text-white"} link-underline-circle text-base font-medium hover:text-primary`}
+            href="/#realisations"
+            onClick={() => setActiveHash("#realisations")}
           >
             Réalisations
           </Link>
 
           <Link
-            className={`link ${activeHash === "apropos" ? "active text-primary" : "text-white"} link-underline-circle text-base font-medium hover:text-primary`}
-            href="#apropos"
-            onClick={() => setActiveHash("apropos")}
+            className={`link ${activeHash === "#apropos" ? "active text-primary" : "text-white"} link-underline-circle text-base font-medium hover:text-primary`}
+            href="/#apropos"
+            onClick={() => setActiveHash("#apropos")}
           >
             À propos
           </Link>
 
           <Link
-            className={`link ${activeHash === "contact" ? "active text-primary" : "text-white"} link-underline-circle text-base font-medium hover:text-primary`}
-            href="#contact"
-            onClick={() => setActiveHash("contact")}
+            className={`link ${activeHash === "#contact" ? "active text-primary" : "text-white"} link-underline-circle text-base font-medium hover:text-primary`}
+            href="/#contact"
+            onClick={() => setActiveHash("#contact")}
           >
             Contact
           </Link>
@@ -132,7 +123,7 @@ export default function Header() {
 
         {/* Social links */}
         <div className="hidden items-center gap-2 lg:flex lg:flex-1 lg:justify-end">
-          <a
+          <Link
             href="https://github.com/WebMagStudio"
             className="ml-6 mr-4 flex size-12 items-center justify-center rounded-xl border border-white bg-gradient-to-r from-accent to-accent-dark p-1.5 hover:shadow-xl"
           >
@@ -144,9 +135,9 @@ export default function Header() {
               alt="Logo github"
               className="fill-blue-500"
             />
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="https://www.linkedin.com/in/marine-magnin/"
             className="flex size-12 items-center justify-center rounded-xl border border-white bg-gradient-to-r from-accent to-accent-dark p-1.5 hover:shadow-xl"
           >
@@ -157,7 +148,7 @@ export default function Header() {
               height={18}
               alt="Logo linkedin"
             />
-          </a>
+          </Link>
         </div>
       </nav>
 
@@ -215,39 +206,39 @@ export default function Header() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 <Link
-                  className={`link ${activeHash === "services" ? "active bg-primary text-white" : "text-primary"} -mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium hover:bg-primary hover:text-white`}
-                  href="#services"
-                  onClick={() => setActiveHash("services")}
+                  className={`link ${activeHash === "#services" ? "active bg-primary text-white" : "text-primary"} -mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium hover:bg-primary hover:text-white`}
+                  href="/#services"
+                  onClick={() => setActiveHash("#services")}
                 >
                   Services
                 </Link>
 
                 <Link
-                  className={`link ${activeHash === "realisations" ? "active bg-primary text-white" : "text-primary"} -mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium hover:bg-primary hover:text-white`}
-                  href="#realisations"
-                  onClick={() => setActiveHash("realisations")}
+                  className={`link ${activeHash === "#realisations" ? "active bg-primary text-white" : "text-primary"} -mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium hover:bg-primary hover:text-white`}
+                  href="/#realisations"
+                  onClick={() => setActiveHash("#realisations")}
                 >
                   Réalisations
                 </Link>
 
                 <Link
-                  className={`link ${activeHash === "apropos" ? "active bg-primary text-white" : "text-primary"} hover:bg-primary -mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium hover:text-white`}
-                  href="#apropos"
-                  onClick={() => setActiveHash("apropos")}
+                  className={`link ${activeHash === "#apropos" ? "active bg-primary text-white" : "text-primary"} hover:bg-primary -mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium hover:text-white`}
+                  href="/#apropos"
+                  onClick={() => setActiveHash("#apropos")}
                 >
                   À propos
                 </Link>
 
                 <Link
-                  className={`link ${activeHash === "contact" ? "active bg-primary text-white" : "text-primary"} -mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium hover:bg-primary hover:text-white`}
-                  href="#contact"
-                  onClick={() => setActiveHash("contact")}
+                  className={`link ${activeHash === "#contact" ? "active bg-primary text-white" : "text-primary"} -mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium hover:bg-primary hover:text-white`}
+                  href="/#contact"
+                  onClick={() => setActiveHash("#contact")}
                 >
                   Contact
                 </Link>
 
                 <div className="flex justify-start gap-2">
-                  <a
+                  <Link
                     href="https://github.com/WebMagStudio"
                     className="flex size-12 items-center justify-center rounded-xl border border-white bg-gradient-to-r from-accent to-accent-dark p-1.5 hover:shadow-xl"
                   >
@@ -258,9 +249,9 @@ export default function Header() {
                       height={18}
                       alt="Logo github"
                     />
-                  </a>
+                  </Link>
 
-                  <a
+                  <Link
                     href="https://www.linkedin.com/in/marine-magnin/"
                     className="flex size-12 items-center justify-center rounded-xl border border-white bg-gradient-to-r from-accent to-accent-dark p-1.5 hover:shadow-xl"
                   >
@@ -271,7 +262,7 @@ export default function Header() {
                       height={18}
                       alt="Logo linkedin"
                     />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

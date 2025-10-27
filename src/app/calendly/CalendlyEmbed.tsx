@@ -9,11 +9,13 @@ interface CalendlyEmbedProps {
 const CalendlyEmbed: React.FC<CalendlyEmbedProps> = ({ url }) => {
   useEffect(() => {
     const head = document.querySelector("head");
+    if (!head) return; // Si head n'existe pas, on sort
     const script = document.createElement("script");
     script.setAttribute(
       "src",
       "https://assets.calendly.com/assets/external/widget.js"
     );
+    script.async = true;
     head.appendChild(script);
   }, []);
 

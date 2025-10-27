@@ -1,20 +1,13 @@
-import { api, HydrateClient } from "~/trpc/server";
+import { HydrateClient } from "~/trpc/server";
 import HeroBanner from "./_components/heroBanner";
 import HeadingBlock from "./_components/headingBlock";
 import ProjectsGrid from "./_components/projectsGrid";
 import CTABanner from "./_components/ctaBanner";
 import TestimonialsCarousel from "./_components/testimonialsCarousel";
 import CVDownloadCard from "./_components/CVDownloadCard";
-import ContactForm from "./_components/contactForm";
-import CardInfo from "./_components/cardInfo";
-
-import { MapPinIcon, PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
+import Image from "next/image";
 
 export default async function Home() {
-  const hello = await api.post.hello({ text: "from tRPC" });
-
-  void api.post.getLatest.prefetch();
-
   return (
     <HydrateClient>
       <main className="flex flex-col items-center justify-center">
@@ -34,7 +27,7 @@ export default async function Home() {
                 }
                 text={
                   <>
-                    Parce que votre savoir-faire mérite d’être vu ! <br />
+                    Parce que votre savoir-faire mérite d&apos;être vu ! <br />
                     {/* Parce que votre temps est précieux ! <br />
                     Parce que votre futur se dessine sur le web ! <br /> <br /> */}
                     Laissez-moi vous accompagner et, ensemble, créons une
@@ -76,10 +69,10 @@ export default async function Home() {
                     page
                   </h3>
                   <p className="mt-1 text-2xl/8 font-medium tracking-tight text-primary">
-                    Montrez votre valeur au premier coup d’œil
+                    Montrez votre valeur au premier coup d&apos;œil
                   </p>
                   <p className="mt-2 max-w-[600px] sm:max-w-full text-sm/6 text-primary">
-                    Vous n’avez pas encore de site ou le vôtre ne vous
+                    Vous n&apos;avez pas encore de site ou le vôtre ne vous
                     correspond plus ?
                     Je construis pas à pas un site moderne, rapide et simple à
                     utiliser. Un site pensé pour vos clients, conçu
@@ -141,8 +134,8 @@ export default async function Home() {
                   </p>
                   <p className="mt-2 max-w-[600px] sm:max-w-full text-sm/6 text-primary">
                     Un site ou une application, ça nécessite une attention
-                    régulière. Pour vous, je m’occupe : des sauvegardes, des
-                    mises à jour, de l'hébergement et de la sécurité.
+                    régulière. Pour vous, je m&apos;occupe : des sauvegardes, des
+                    mises à jour, de l&apos;hébergement et de la sécurité.
                   </p>
                 </div>
               </div>
@@ -155,28 +148,34 @@ export default async function Home() {
 
                     {/* LinkedIn */}
                     <div className="flex size-20 items-center justify-center rounded-full border border-gray-300 bg-white shadow transition hover:scale-105">
-                      <img
+                      <Image
+                        width={60}
+                        height={60}
                         src="/icons/linkedin.svg"
                         alt="LinkedIn"
-                        className="h-20 w-20"
+                      // className="h-20 w-20"
                       />
                     </div>
 
                     {/* Instagram */}
                     <div className="flex size-20 items-center justify-center rounded-full border border-gray-300 bg-white shadow transition hover:scale-105">
-                      <img
+                      <Image
+                        width={45}
+                        height={45}
                         src="/icons/instagram.svg"
                         alt="Instagram"
-                        className="h-14 w-14"
+                      // className="h-14 w-14"
                       />
                     </div>
 
                     {/* Facebook */}
                     <div className="flex size-20 items-center justify-center rounded-full border border-gray-300 bg-white shadow transition hover:scale-105">
-                      <img
+                      <Image
+                        width={45}
+                        height={45}
                         src="/icons/facebook.svg"
                         alt="Facebook"
-                        className="h-14 w-14"
+                      // className="h-14 w-14"
                       />
                     </div>
                   </div>
@@ -223,7 +222,7 @@ export default async function Home() {
                 preTitle="Témoignages"
                 title={
                   <>
-                    Ce qu'ils{" "}
+                    Ce qu&apos;ils{" "}
                     <span className="text-accent-dark">disent de moi</span>
                   </>
                 }
@@ -234,21 +233,6 @@ export default async function Home() {
             </div>
           </section>
         </div>
-
-        {/* <section id="blog" className="my-12 w-full">
-          <div className="mx-auto max-w-[1240px] px-4 py-16">
-            <HeadingBlock
-              className="text-primary"
-              preTitle="Blog"
-              title={
-                <>
-                  Nouveautés du <span className="text-accent-dark">blog</span>
-                </>
-              }
-            />
-
-          </div>
-        </section> */}
 
         <section id="apropos" className="my-12 w-full">
           <div className="mx-auto max-w-[1240px] px-4 py-16">
@@ -263,22 +247,22 @@ export default async function Home() {
             />
             <CVDownloadCard />
             <p className="mx-10 my-12 max-w-5xl">
-              C’est le moment des présentations 🙂 ! <br />
-              Je m'appelle Marine Magnin, et, je crée des sites web et des solutions digitales pour les indépendants, les artisans et les petites
+              C&apos;est le moment des présentations 🙂 ! <br />
+              Je m&apos;appelle Marine Magnin, et, je crée des sites web et des solutions digitales pour les indépendants, les artisans et les petites
               structures. <br />
               Pas besoin de jargon technique : je prends le temps de comprendre
               votre métier, vos priorités et vos clients. <br /> Ensemble, on
               avance pas à pas vers un outil clair, moderne, efficace — et qui
               vous ressemble. <br />
               <br /> Mon objectif ? Que vous soyez fière de votre présence en
-              ligne, qu'elle fasse vraiment une différence pour vous, et qu’elle soit utile au quotidien.
+              ligne, qu&apos;elle fasse vraiment une différence pour vous, et qu&apos;elle soit utile au quotidien.
             </p>
           </div>
         </section>
 
         <div className="mb-12 w-full">
           <section
-            id="consultation"
+            id="contact"
             className="mx-3 mb-12 rounded-3xl bg-gradient-to-r from-accent-light via-accent to-accent-dark py-12 text-white"
           >
             <CTABanner
@@ -291,7 +275,7 @@ export default async function Home() {
               }
               textBanner={
                 <>
-                  N'attendez plus pour booster votre visibilité en ligne !{" "}
+                  N&apos;attendez plus pour booster votre visibilité en ligne !{" "}
                   <br />
                   Prenez rendez-vous dès maintenant et ensemble, donnons vie à vos
                   idées.
@@ -302,61 +286,6 @@ export default async function Home() {
             />
           </section>
         </div>
-
-        {/* <section
-          id="contact"
-          className="mt-3 w-full bg-gradient-to-r from-accent-light via-accent to-accent-dark py-3"
-        >
-          <div className="mx-3 rounded-3xl bg-white/60 px-4 py-12">
-            <div className="mx-auto max-w-[1240px]">
-              <HeadingBlock
-                className="text-primary"
-                preTitle="Contact"
-                title={
-                  <>
-                    <span className="text-accent-dark">Contactez - moi</span>
-                  </>
-                }
-              />
-              <p className="mb-12 text-center">
-                {
-                  <>
-                    Pour toute question ou collaboration,
-                    vous pouvez me joindre directement par email.
-                    <br /> Je serais ravie d’échanger avec vous !
-                  </>
-                }
-              </p>
-              <div>
-                <div className="mt-1 text-2xl text-primary">
-                  <EnvelopeIcon className="h-8 w-8" />
-                  <p>contact@webmagstudio.fr</p>
-                  </div>
-              </div>
-              <div className="grid grid-cols-1 gap-8">
-                <div className="mx-auto flex w-full max-w-[600px] flex-col justify-between gap-6">
-                  <CardInfo
-                    icon={<MapPinIcon className="h-8 w-8" />}
-                    content={
-                      <>
-                        Savoie, Isère, Haute-Savoie, Rhône <br /> + <br />{" "}
-                        En distanciel
-                      </>
-                    }
-                  />
-                  <CardInfo
-                    icon={<PhoneIcon className="h-8 w-8" />}
-                    content="06.70.45.59.84"
-                  />
-                  <CardInfo
-                    icon={<EnvelopeIcon className="h-8 w-8" />}
-                    content="contact@webmagstudio.fr"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> */}
       </main>
     </HydrateClient>
   );

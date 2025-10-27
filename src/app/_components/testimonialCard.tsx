@@ -1,11 +1,11 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 type TestimonialCardProps = {
   firstName: string;
   lastName: string;
-  role: string;
+  role: string | ReactNode;
   society: string;
-  message: string | React.ReactNode;
+  message: string | ReactNode;
 };
 
 export default function TestimonialCard({
@@ -19,7 +19,7 @@ export default function TestimonialCard({
     <article className="mx-auto max-w-[910px] rounded-3xl border-2 border-white bg-white/10 backdrop-blur-xl">
       <div className="w-full rounded-3xl p-[24px] sm:p-[50px]">
         <blockquote className="font-regular mb-[24px] text-base text-white sm:mb-[50px] sm:text-xl">
-          "{message}"
+          &quot;{message}&quot;
         </blockquote>
         <p className="text-base font-semibold text-white sm:text-lg">
           {firstName} {lastName}

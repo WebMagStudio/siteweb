@@ -6,6 +6,22 @@ import ProjectCard from "./projectCard";
 import { projectsList } from "~/data/projectsList";
 import FilterButton from "./filterButton";
 
+import type { ReactNode } from "react";
+
+
+type Project = {
+  id: number;
+  title: string | ReactNode;
+  description: string | ReactNode;
+  category: string | string[];
+  image: string;
+  liveDemo?: string | null;
+  sourceCode?: string | null;
+  sourceType?: "code" | "design" | "refonte";
+  technologies: { name: string; logo: string }[];
+};
+
+
 export default function ProjectsGrid() {
   const [visibleCount, setVisibleCount] = useState(4);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -13,7 +29,7 @@ export default function ProjectsGrid() {
 
   const isAllVisible = selectedCategory
     ? visibleCount >=
-    projectsList.filter((project) =>
+    projectsList.filter((project: Project) =>
       Array.isArray(project.category)
         ? project.category.includes(selectedCategory)
         : project.category === selectedCategory,
@@ -22,7 +38,7 @@ export default function ProjectsGrid() {
 
   // Filtrage des projets
   const filteredProjects = selectedCategory
-    ? projectsList.filter((project) =>
+    ? projectsList.filter((project: Project) =>
       Array.isArray(project.category)
         ? project.category.includes(selectedCategory)
         : project.category === selectedCategory,
@@ -35,9 +51,9 @@ export default function ProjectsGrid() {
   }, [selectedCategory]);
 
   // Extraire les catégories uniques
-  const categories = Array.from(
+  const categories: string[] = Array.from(
     new Set(
-      projectsList.flatMap((project) =>
+      projectsList.flatMap((project: Project) =>
         Array.isArray(project.category) ? project.category : [project.category],
       ),
     ),
@@ -91,7 +107,15 @@ export default function ProjectsGrid() {
             onClick={handleClick}
             className="flex gap-2 rounded-lg border bg-gradient-to-r from-accent-light via-accent to-accent-dark p-4 text-sm font-medium text-white transition duration-200 hover:shadow-md"
           >
-            <img src="/icons/addmore.svg" width={19} height={19} alt="" />
+            <div className="relative w-[19px] h-[19px]">
+              <Image
+                src="/icons/addmore.svg"
+                fill
+                sizes="max-width: 19px"
+                className="object-contain"
+                alt=""
+              />
+            </div>
             Afficher plus
           </button>
         )}

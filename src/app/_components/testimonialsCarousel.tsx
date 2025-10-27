@@ -58,7 +58,7 @@ export default function TestimonialsCarousel() {
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         onScroll={handleScroll}
       >
-        {testimonialsList.map((testimonial, index) => (
+        {testimonialsList.map((testimonial, _index) => (
           <div
             key={testimonial.id}
             className="flex w-full shrink-0 snap-start justify-center"
@@ -74,11 +74,10 @@ export default function TestimonialsCarousel() {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`size-4 rounded-full transition-all duration-300 md:size-6 ${
-              activeIndex === index
-                ? "scale-110 bg-slate-200"
-                : "border border-slate-200 bg-transparent hover:bg-slate-200"
-            }`}
+            className={`size-4 rounded-full transition-all duration-300 md:size-6 ${activeIndex === index
+              ? "scale-110 bg-slate-200"
+              : "border border-slate-200 bg-transparent hover:bg-slate-200"
+              }`}
             aria-label={`Aller au témoignage ${index + 1}`}
           />
         ))}

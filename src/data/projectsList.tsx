@@ -1,9 +1,9 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 type Project = {
   id: number;
-  title: string;
-  description: ReactNode;
+  title: string | ReactNode;
+  description: string | ReactNode;
   category: string;
   image: string;
   liveDemo: string | null;
@@ -15,8 +15,17 @@ type Project = {
 export const projectsList: Project[] = [
   {
     id: 1,
-    title: "Let's sport",
-    description: "Conception d’une application mobile visant à favoriser le sport entre amis : création des parcours utilisateurs, réalisation des écrans et développement d’un prototype interactif sous Adobe XD.",
+    title: (
+      <>
+        Let&apos;s sport
+      </>
+    ),
+    description:
+      (
+        <>
+          Conception d&apos;une application mobile visant à favoriser le sport entre amis : création des parcours utilisateurs, réalisation des écrans et développement d&apos;un prototype interactif sous Adobe XD.
+        </>
+      ),
     category: "Design graphique",
     image: "/img/lets-sport.png",
     liveDemo: null,
@@ -48,8 +57,12 @@ export const projectsList: Project[] = [
   {
     id: 3,
     title: "GameOn",
-    description: "Refonte d’une landing page et d’un formulaire d’inscription : simplification du parcours, ajout des fonctionnalités JavaScript, vérification du responsive et respect des maquettes pour améliorer l’expérience utilisateur.",
-    category: "Création site web",
+    description:
+      (
+        <>
+          Refonte d&apos;une landing page et d&apos;un formulaire d’inscription : simplification du parcours, ajout des fonctionnalités JavaScript, vérification du responsive et respect des maquettes pour améliorer l&apos;expérience utilisateur.
+        </>
+      ), category: "Création site web",
     image: "/img/gameon.png",
     liveDemo:
       "https://magma73.github.io/Projet-4-Creer-une-landing-page-avec-Javascript/",
@@ -65,8 +78,12 @@ export const projectsList: Project[] = [
   {
     id: 4,
     title: "OhMyFood",
-    description: "Site 100% mobile permettant de consulter les menus de restaurants gastronomiques. Intégration d’animations CSS pour dynamiser l'interface.",
-    category: "Création site web",
+    description:
+      (
+        <>
+          Site 100% mobile permettant de consulter les menus de restaurants gastronomiques. Intégration d&apos;animations CSS pour dynamiser l&apos;interface.
+        </>
+      ), category: "Création site web",
     image: "/img/oh-my-food-1.png",
     liveDemo:
       "https://magma73.github.io/Projet-3-Dynamiser-une-page-web-avec-des-animations-CSS/",
@@ -83,8 +100,12 @@ export const projectsList: Project[] = [
   {
     id: 5,
     title: "FishEye",
-    description: "Création d’un site accessible pour une plateforme de photographes freelance.",
-    category: "App web",
+    description:
+      (
+        <>
+          Création d&apos;une plateforme de photographes freelance, pensée pour simplifier la mise en relation entre clients et professionnels tout en valorisant le travail des photographes.
+        </>
+      ), category: "App web",
     image: "/img/fisheye.png",
     liveDemo:
       "https://magma73.github.io/Projet-6-Plateforme-photographes-Fisheye/public/",
@@ -101,8 +122,12 @@ export const projectsList: Project[] = [
   {
     id: 6,
     title: "Les petits plats",
-    description: "Site de recettes permettant aux utilisateurs de rechercher facilement des plats par ingrédients ou mots-clés, avec développement d’un moteur de recherche performant en JavaScript.",
-    category: "App web",
+    description:
+      (
+        <>
+          Application permettant aux utilisateurs de rechercher facilement des recettes par ingrédients ou mots-clés, avec développement d&apos;un moteur de recherche performant en JavaScript.
+        </>
+      ), category: "App web",
     image: "/img/les-petits-plats.png",
     liveDemo:
       "https://magma73.github.io/Projet-7-Developpez-un-algorithme-de-recherche-en-JavaScript/public/",
@@ -120,8 +145,12 @@ export const projectsList: Project[] = [
   {
     id: 7,
     title: "Billed",
-    description: "Débogage et test d’une fonctionnalité de gestion de notes de frais pour une application SaaS RH afin de la rendre opérationnelle avant son lancement.",
-    category: "App web",
+    description:
+      (
+        <>
+          Débogage et test d&apos;une fonctionnalité de gestion de notes de frais pour une application SaaS RH afin de la rendre opérationnelle avant son lancement.
+        </>
+      ), category: "App web",
     image: "/img/billed.png",
     liveDemo: null,
     sourceCode:
@@ -136,8 +165,12 @@ export const projectsList: Project[] = [
   {
     id: 8,
     title: "Kasa",
-    description: "Refonte d'une plateforme de location d’appartements entre particuliers.",
-    category: "App web",
+    description:
+      (
+        <>
+          Refonte d&apos;une plateforme de location d&apos;appartements entre particuliers.
+        </>
+      ), category: "App web",
     image: "/img/kasa.png",
     liveDemo: "https://kasa-marine-magnin.netlify.app/",
     sourceCode:
@@ -152,8 +185,12 @@ export const projectsList: Project[] = [
   {
     id: 9,
     title: "Learn@Home",
-    description: "Définition des besoins et conception d’une application web de soutien scolaire pour faciliter la communication entre élèves et tuteurs bénévoles : élaboration des cas d’usage, user stories et maquettes.",
-    category: "Design graphique",
+    description:
+      (
+        <>
+          Définition des besoins et conception d&apos;une application web de soutien scolaire pour faciliter la communication entre élèves et tuteurs bénévoles : élaboration des cas d&apos;usage, user stories et maquettes.
+        </>
+      ), category: "Design graphique",
     image: "/img/learn-at-home.png",
     liveDemo: null,
     sourceCode:
@@ -168,8 +205,12 @@ export const projectsList: Project[] = [
   {
     id: 10,
     title: "Sport See",
-    description: "Développement d’un tableau de bord analytique, permettant aux utilisateurs de suivre leur activité sportive (séances réalisées, calories brûlées, poids, etc.).",
-    category: "App web",
+    description:
+      (
+        <>
+          Développement d&apos;un tableau de bord analytique, permettant aux utilisateurs de suivre leur activité sportive (séances réalisées, calories brûlées, poids, etc.).
+        </>
+      ), category: "App web",
     image: "/img/sportsee.png",
     liveDemo: null,
     sourceCode:
@@ -184,8 +225,11 @@ export const projectsList: Project[] = [
     id: 11,
     title: "Argent Bank",
     description:
-      "Développement d’une application web bancaire, permettant aux clients de se connecter, de gérer leurs comptes et leur profil en ligne.",
-    category: "App web",
+      (
+        <>
+          Développement d&apos;une application web bancaire, permettant aux clients de se connecter, de gérer leurs comptes et leur profil en ligne.
+        </>
+      ), category: "App web",
     image: "/img/argent-bank.png",
     liveDemo: null,
     sourceCode: "https://github.com/Magma73/Projet-13-argent-bank",
@@ -200,9 +244,17 @@ export const projectsList: Project[] = [
   },
   {
     id: 12,
-    title: "Ouisti'Tree",
-    description:
-      "Refonte du site pour améliorer la navigation, organiser le contenu selon les besoins des utilisateurs, valoriser l’expertise arboricole et renforcer la visibilité en ligne.",
+    title:
+      (
+        <>
+          Ouisti&apos;Tree
+        </>
+      ),
+    description: (
+      <>
+        Refonte du site pour améliorer la navigation, organiser le contenu selon les besoins des utilisateurs, valoriser l&apos;expertise arboricole et renforcer la visibilité en ligne.
+      </>
+    ),
     category: "Refonte site web",
     image: "/img/ouistitree.png",
     liveDemo: null,

@@ -1,5 +1,5 @@
-import Image from "next/image";
 import CTAButton from "./ctaButton";
+import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 
 export default function CVDownloadCard() {
   return (
@@ -10,7 +10,7 @@ export default function CVDownloadCard() {
           CV Marine Magnin Développeur Front-End
         </p>
         <p className="text-md pb-6 font-normal text-primary md:text-xl">
-          Besoin d'en savoir plus sur mon parcours, téléchargez mon CV en ligne.
+          Besoin d&apos;en savoir plus sur mon parcours, téléchargez mon CV en ligne.
         </p>
       </div>
 
@@ -19,7 +19,7 @@ export default function CVDownloadCard() {
           text="Télécharger mon CV"
           href="/doc/CV Marine Magnin.pdf"
           iconLeft={
-            <img src="/icons/download.svg" width={12} height={12} alt="" />
+            <ArrowDownTrayIcon className="h-5 w-5" />
           }
           className="!rounded-lg !p-4 text-sm"
         />

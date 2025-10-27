@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import Image from "next/image";
 import { PlusIcon } from "@heroicons/react/24/outline";
 
 type ServiceCardProps = {
   title: string;
-  description: string | React.ReactNode;
+  description: string | ReactNode;
   cta: string;
   link: string;
   icon: string;

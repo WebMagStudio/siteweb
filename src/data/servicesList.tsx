@@ -1,10 +1,10 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 type Service = {
   id: number;
   title: string;
-  description: ReactNode;
-  cta: string;
+  description: string | ReactNode;
+  cta: string | ReactNode;
   link: string;
   icon: string;
 };
@@ -34,12 +34,16 @@ export const servicesList: Service[] = [
         Boostez votre <strong> présence en ligne </strong> avec une stratégie
         digitale personnalisée. Je vous accompagne dans la gestion de votre
         communication sur les <strong>réseaux sociaux</strong>, la{" "}
-        <strong>rédaction de contenus</strong> optimisés SEO et l'amélioration
+        <strong>rédaction de contenus</strong> optimisés SEO et l&apos;amélioration
         de votre visibilité sur <strong>Google My Business</strong> pour attirer
         de nouveaux clients.
       </>
     ),
-    cta: "Découvrez l'accompagnement",
+    cta: (
+      <>
+        Découvrez l&apos;accompagnement
+      </>
+    ),
     link: "/services/strategie-digitale",
     icon: "/icons/pencil.svg",
   },
@@ -47,8 +51,11 @@ export const servicesList: Service[] = [
     id: 3,
     title: "Maintenance et sécurité",
     description:
-      "Un site ou une application, ça nécessite une attention régulière. Pour vous, je m’occupe des mises à jour, des sauvegardes et de la sécurité pour garantir leur bon fonctionnement et leur protection.",
-    cta: "Protégez votre site",
+      (
+        <>
+          Un site ou une application, ça nécessite une attention régulière. Pour vous, je m&apos;occupe des mises à jour, des sauvegardes et de la sécurité pour garantir leur bon fonctionnement et leur protection.
+        </>
+      ), cta: "Protégez votre site",
     link: "/services/maintenance",
     icon: "/icons/cog-6-tooth.svg",
   },

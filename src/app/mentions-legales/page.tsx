@@ -1,3 +1,4 @@
+import Link from "next/link";
 import HeroBanner from "../_components/heroBanner";
 
 export default async function MentionsLegales() {
@@ -23,9 +24,9 @@ export default async function MentionsLegales() {
                 </div>
                 <div className="flex flex-col gap-4">
                     <h2 className="text-3xl font-bold sm:text-5xl">Informations techniques</h2>
-                    <p>Il est rappelé que le secret des correspondances n’est pas garanti sur le réseau Internet et qu’il appartient à chaque utilisateur d’Internet de prendre toutes les mesures appropriées de façon à protéger ses propres données et/ou logiciels de la contamination d’éventuels virus circulant sur Internet.
+                    <p>Il est rappelé que le secret des correspondances n&apos;est pas garanti sur le réseau Internet et qu&apos;il appartient à chaque utilisateur d&apos;Internet de prendre toutes les mesures appropriées de façon à protéger ses propres données et/ou logiciels de la contamination d&apos;éventuels virus circulant sur Internet.
                         .</p>
-                    <p>Voir <a href="/" className="underline">la politique de confidentialité</a></p>
+                    <p>Voir <Link href="/politique-confidentialite" className="underline">la politique de confidentialité</Link></p>
                 </div>
                 <div className="flex flex-col gap-4">
                     <h2 className="text-3xl font-bold sm:text-5xl">Entrée en vigueur</h2>

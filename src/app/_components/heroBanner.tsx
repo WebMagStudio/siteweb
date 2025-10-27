@@ -1,5 +1,5 @@
 import CTAButton from "./ctaButton";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 type HeroBannerProps = {
   title: string | React.ReactNode;

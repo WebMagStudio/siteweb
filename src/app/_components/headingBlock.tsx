@@ -1,7 +1,7 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 type HeadingBlockProps = {
-  title: string | React.ReactNode;
+  title: string | ReactNode;
   preTitle: string;
   className?: string;
 };
