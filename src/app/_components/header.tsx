@@ -9,15 +9,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 import SocialIconLink from "./socialIconLink";
 
-import { Comfortaa } from "next/font/google";
-
 import Image from "next/image";
-
-const comfortaa = Comfortaa({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  display: "swap",
-});
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -65,9 +57,6 @@ export default function Header() {
                 />
               </div>
             </Link>
-            {/* <Link href="/" className={`${comfortaa.className} font-bold text-primary`}>
-              WebMagStudio
-            </Link> */}
           </div>
         </div>
 
