@@ -36,7 +36,7 @@ export default async function Home() {
                 }
                 button={{
                   text: "Lancez votre projet",
-                  href: "#consultation",
+                  href: "#contact",
                 }}
               />
             </div>

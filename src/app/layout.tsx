@@ -14,8 +14,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Site web Marine Magnin",
-  description: "Je crée des sites web pour les auto entrepreneurs",
+  title: "WebMagStudio - Création/refonte de site web",
+  description: "Sites web, applications et stratégie digitale pour une présence en ligne qui vous ressemble",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 

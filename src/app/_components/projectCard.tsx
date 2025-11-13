@@ -74,7 +74,7 @@ export default function ProjectCard({
           </p>
         </div>
 
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between mt-4">
           <div className="flex-1">
             <div className="mr-2 flex flex-wrap sm:space-x-1">
               {technologies.map((tech, i) => (
