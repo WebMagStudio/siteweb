@@ -2,9 +2,11 @@ import "~/styles/globals.css";
 
 import Header from "./_components/header";
 import Footer from "./_components/footer";
+import CookieBanner from "./_components/cookieBanner";
 
 import { Inter } from "next/font/google";
 import { type Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 
 import { TRPCReactProvider } from "~/trpc/react";
 
@@ -27,6 +29,8 @@ export default function RootLayout({
       <body>
         <Header />
         <TRPCReactProvider>{children}</TRPCReactProvider>
+         <CookieBanner />
+        <Analytics />
         <Footer />
       </body>
     </html>

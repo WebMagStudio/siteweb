@@ -35,7 +35,7 @@ export default async function PolitiqueConfidentialite() {
                     <p>L&apos;éditrice de publication ne peut en aucun cas être tenue responsable de l&apos;utilisation ou de l&apos;interprétation des informations contenues sur le site.</p>
                     <h3 className="text-lg font-bold sm:text-2xl">Sécurité</h3>
                     <p>
-                        Nous vous encourageons à prendre toutes précautions utiles, mesures organisationnelles et techniques appropriées pour préserver la sécurité, l&apos;intégrité et la confidentialité de vos données à caractère personnel et notamment, empêcher qu&apos;elles soient déformées, endommagées ou que des tiers non autorisés y aient accès.Nous vous encourageons à prendre toutes précautions utiles, mesures organisationnelles et techniques appropriées pour préserver la sécurité, l&apos;intégrité et la confidentialité de vos données à caractère personnel et notamment, empêcher qu&apos;elles soient déformées, endommagées ou que des tiers non autorisés y aient accès.
+                        Nous vous encourageons à prendre toutes précautions utiles, mesures organisationnelles et techniques appropriées pour préserver la sécurité, l&apos;intégrité et la confidentialité de vos données à caractère personnel et notamment, empêcher qu&apos;elles soient déformées, endommagées ou que des tiers non autorisés y aient accès.
                     </p>
                     <h3 className="text-lg font-bold sm:text-2xl">Liens hypertextes</h3>
                     <p>
@@ -49,11 +49,12 @@ export default async function PolitiqueConfidentialite() {
 
                     <h3 className="text-lg font-bold sm:text-2xl">Informations collectées et usages</h3>
                     <p>
-                        Nous collectons des informations personnelles lorsque vous nous contactez via la prise de rendez-vous en ligne ou lorsque vous nous envoyez un e-mail. Les informations que nous collectons peuvent inclure votre nom, votre adresse e-mail, votre numéro de téléphone, et toute autre information que vous choisissez de nous fournir.
+                        Nous collectons des informations personnelles lorsque vous nous contactez via la prise de rendez-vous en ligne ou lorsque vous nous envoyez un e-mail. Les informations que nous collectons peuvent inclure votre nom, votre prénom, votre adresse e-mail, votre numéro de téléphone, et toute autre information que vous choisissez de nous fournir.
                     </p>
                     <h3 className="text-lg font-bold sm:text-2xl">Cookies</h3>
                     <p>
-                        Sur ce site, nous n&apos;utilisons pas de cookies publicitaires, ni de statistiques d’audience, ni de suivi du comportement de l&apos;utilisateur.
+                        Ce site n&apos;utilise pas de cookies publicitaires. Nous collectons uniquement des données anonymes
+                        pour mesurer l&apos;audience via Vercel Analytics, qui ne stocke aucune information personnelle.
                     </p>
                     <h3 className="text-lg font-bold sm:text-2xl">Contenu embarqué depuis d&apos;autres sites</h3>
                     <p>
@@ -74,14 +75,15 @@ export default async function PolitiqueConfidentialite() {
                     </p>
                     <h3 className="text-lg font-bold sm:text-2xl">Données relatives à la mesure de l&apos;audience</h3>
                     <p>
-                        Les informations stockées dans le terminal des utilisateurs ou tout autre élément utilisé pour identifier les utilisateurs et permettant leur traçabilité ou fréquentation ne seront pas conservées au-delà de 6 mois.
+                        Nous collectons uniquement des données anonymes pour mesurer l&apos;audience du site via Vercel Analytics.
+                        Aucune information personnelle n&apos;est stockée, et les données sont conservées au maximum 6 mois.
                     </p>
                 </div>
                 <div className="flex flex-col gap-4">
                     <h2 className="text-3xl font-bold sm:text-4xl">Les droits que vous avez sur vos données</h2>
                     <p>
-                        Conformément à la loi n° 78-17 du 6 janvier 1978 relative à l&apos;informatique, aux fichiers et aux libertés, vous disposez du droit d&apos;obtenir la communication et, le cas échéant, la rectification ou la suppression des données vous concernant, à travers un accès en ligne à votre dossier.
-                        Vous pouvez également vous adresser à : contact@webmagstudio.fr
+                        Conformément à la loi n° 78-17 du 6 janvier 1978 relative à l&apos;informatique, aux fichiers et aux libertés, vous disposez du droit d&apos;obtenir la communication et, le cas échéant, la rectification ou la suppression des données vous concernant.
+                        Vous pouvez vous adresser à : contact@webmagstudio.fr
                     </p>
                 </div>
                 <div className="flex flex-col gap-4">

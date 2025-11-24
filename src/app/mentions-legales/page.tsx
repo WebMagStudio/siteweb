@@ -19,8 +19,9 @@ export default async function MentionsLegales() {
                 </div>
                 <div className="flex flex-col gap-4">
                     <h2 className="text-3xl font-bold sm:text-5xl">Hébergeur</h2>
-                    <p>OVH SAS – 2 rue Kellermann – BP 80157 – 59053 Roubaix Cedex 1 – Téléphone : 1007
-                        Informations techniques.</p>
+                    <p>
+                        Le site est hébergé par Vercel Inc. – 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis.
+                    </p>
                 </div>
                 <div className="flex flex-col gap-4">
                     <h2 className="text-3xl font-bold sm:text-5xl">Informations techniques</h2>
