@@ -28,6 +28,8 @@ export default function RootLayout({
   return (
     <html lang="fr" className={inter.className}>
       <Head>
+        <meta name="description" content="Sites web, applications et stratégie digitale pour une présence en ligne qui vous ressemble" />
+
         {/* Meta SEO global */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="WebMagStudio - Création/refonte de site web" />
