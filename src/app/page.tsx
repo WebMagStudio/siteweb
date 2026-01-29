@@ -2,12 +2,21 @@ import { HydrateClient } from "~/trpc/server";
 import HeroBanner from "./_components/heroBanner";
 import HeadingBlock from "./_components/headingBlock";
 import ProjectsGrid from "./_components/projectsGrid";
-import CTABanner from "./_components/ctaBanner";
+// import CTABanner from "./_components/ctaBanner";
 import TestimonialsCarousel from "./_components/testimonialsCarousel";
 import CVDownloadCard from "./_components/CVDownloadCard";
 import Image from "next/image";
+import CardInfo from "./_components/cardInfo";
+
+import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 
 export default async function Home() {
+  const emailParts = ['contact', 'webmagstudio.fr'];
+  const email = emailParts.join('@');
+
+  const phone = '06 70 45 59 84'; // À remplacer
+  const phoneHref = '+33670455984'; // Format international
+
   return (
     <HydrateClient>
       <main className="flex flex-col items-center justify-center">
@@ -194,6 +203,26 @@ export default async function Home() {
                   </p>
                 </div>
               </div>
+
+              {/* Bento 6 */}
+              <div className="shadow-xs group relative flex flex-col overflow-hidden rounded-lg bg-white ring-1 ring-black/5 lg:col-span-2">
+                <div className="relative h-80 shrink-0">
+                  <div className="h-80 bg-[url(/img/cadenas.jpg)] bg-cover bg-[center_top_80%]"></div>
+                </div>
+                <div className="relative p-10">
+                  <h3 className="font-mono text-xs/5 font-semibold uppercase tracking-widest text-base/70">
+                    Maintenance et sécurité
+                  </h3>
+                  <p className="mt-1 text-2xl/8 font-medium tracking-tight text-primary">
+                    Restez concentré sur votre métier
+                  </p>
+                  <p className="mt-2 max-w-[600px] sm:max-w-full text-sm/6 text-primary">
+                    Un site ou une application, ça nécessite une attention
+                    régulière. Pour vous, je m&apos;occupe : des sauvegardes, des
+                    mises à jour, de l&apos;hébergement et de la sécurité.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -261,7 +290,7 @@ export default async function Home() {
         </section>
 
         <div className="mb-12 w-full">
-          <section
+          {/* <section
             id="contact"
             className="mx-3 mb-12 rounded-3xl bg-gradient-to-r from-accent-light via-accent to-accent-dark py-12 text-white"
           >
@@ -284,6 +313,71 @@ export default async function Home() {
               href="/calendly"
               text="Prendre rendez-vous"
             />
+          </section> */}
+
+          <section
+            id="contact"
+            className="mt-3 w-full bg-gradient-to-r from-accent-light via-accent to-accent-dark py-3"
+          >
+            <div className="mx-3 rounded-3xl bg-white/60 px-4 py-12">
+              <div className="mx-auto max-w-[1240px]">
+                <HeadingBlock
+                  className="text-primary"
+                  preTitle="Contact"
+                  title={
+                    <>
+                      <span className="text-accent-dark">Contactez - moi</span>
+                    </>
+                  }
+                />
+                <p className="mb-12 text-center">
+                  {
+                    <>
+                      Pour toute question ou collaboration,
+                      vous pouvez me joindre directement par email.
+                      <br /> Je serais ravie d’échanger avec vous !
+                    </>
+                  }
+                </p>
+                <div>
+                </div>
+                <div className="grid grid-cols-1 gap-8">
+                  <div className="mx-auto flex w-full max-w-[600px] flex-col justify-between gap-6">
+                    {/* <CardInfo
+                      icon={<MapPinIcon className="h-8 w-8" />}
+                      content={
+                        <>
+                          Savoie, Isère, Haute-Savoie, Rhône <br /> + <br />{" "}
+                          En distanciel
+                        </>
+                      }
+                    /> */}
+                    <CardInfo
+                      icon={<PhoneIcon className="h-8 w-8" />}
+                      content={
+                        <a
+                          href={`tel:${phoneHref}`}
+                          className="hover:underline"
+                        >
+                          {phone}
+                        </a>
+                      }
+                    />
+                    <CardInfo
+                      icon={<EnvelopeIcon className="h-8 w-8" />}
+                      content={
+                        <a
+                          href={`mailto:${email}`}
+                          className="hover:underline"
+                        >
+                          {email}
+                        </a>
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </section>
         </div>
       </main>

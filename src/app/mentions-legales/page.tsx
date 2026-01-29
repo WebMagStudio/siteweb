@@ -15,7 +15,10 @@ export default async function MentionsLegales() {
                 />
                 <div className="flex flex-col gap-4">
                     <h2 className="text-3xl font-bold sm:text-5xl">Éditeur et responsable de publication</h2>
-                    <p>Le présent site est édité par Marine Magnin.</p>
+                    <p>Le présent site est édité par Marine Magnin, dont l&apos;activité est hébergée chez AUXIME.</p>
+                    <p>AUXIME est une société par actions simplifiée au capital de 50 000 €,
+                        dont le siège social est situé au : 9 quai Jean Moulin, 69001 Lyon. La société est
+                        immatriculée au Registre du Commerce et des Sociétés de Lyon sous le numéro 404 328 510, numéro de TVA FR57 404328510.</p>
                 </div>
                 <div className="flex flex-col gap-4">
                     <h2 className="text-3xl font-bold sm:text-5xl">Hébergeur</h2>
