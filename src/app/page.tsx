@@ -205,7 +205,7 @@ export default async function Home() {
               </div>
 
               {/* Bento 6 */}
-              <div className="shadow-xs group relative flex flex-col overflow-hidden rounded-lg bg-white ring-1 ring-black/5 lg:col-span-2">
+              {/* <div className="shadow-xs group relative flex flex-col overflow-hidden rounded-lg bg-white ring-1 ring-black/5 lg:col-span-2">
                 <div className="relative h-80 shrink-0">
                   <div className="h-80 bg-[url(/img/cadenas.jpg)] bg-cover bg-[center_top_80%]"></div>
                 </div>
@@ -222,7 +222,7 @@ export default async function Home() {
                     mises à jour, de l&apos;hébergement et de la sécurité.
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
