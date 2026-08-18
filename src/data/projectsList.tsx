@@ -264,4 +264,48 @@ export const projectsList: Project[] = [
       { name: "Wix", logo: "/iconsTech/wix.png" },
     ],
   },
+  {
+    id: 13,
+    title:
+      (
+        <>
+          Les Moments Zen d&apos;Isa
+        </>
+      ),
+    description: (
+      <>
+        Refonte du site vitrine pour un rendu plus chaleureux et personnel : mise en avant de la masseuse et de son univers, explications des bienfaits des massages, et optimisation SEO pour la visibilité locale.
+      </>
+    ),
+    category: "Refonte site web",
+    image: "/img/les-moments-zen-disa.png",
+    liveDemo: null,
+    sourceCode: "https://www.lesmomentszendisa.fr/",
+    sourceType: "refonte",
+    technologies: [
+      { name: "Wordpress", logo: "/iconsTech/wordpress.png" },
+    ],
+  },
+  {
+    id: 14,
+    title:
+      (
+        <>
+          Arb&apos;Origine
+        </>
+      ),
+    description: (
+      <>
+        Création d'un site vitrine : présentation des services, galerie de chantiers récents, formulaire de demande de devis et référencement local pour attirer de nouveaux clients.
+      </>
+    ),
+    category: "Création site web",
+    image: "/img/arborigine.png",
+    liveDemo: null,
+    sourceCode: "https://www.arborigine.fr/",
+    sourceType: "refonte",
+    technologies: [
+      { name: "Wordpress", logo: "/iconsTech/wordpress.png" },
+    ],
+  },
 ];
