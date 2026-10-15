@@ -296,7 +296,7 @@ export const projectsList: Project[] = [
       ),
     description: (
       <>
-        Création d'un site vitrine : présentation des services, galerie de chantiers récents, formulaire de demande de devis et référencement local pour attirer de nouveaux clients.
+        Création d&apos;un site vitrine : présentation des services, galerie de chantiers récents, formulaire de demande de devis et référencement local pour attirer de nouveaux clients.
       </>
     ),
     category: "Création site web",
